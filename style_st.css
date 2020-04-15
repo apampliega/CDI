@@ -1,0 +1,34 @@
+<!doctype css>
+body {
+    background-color: #7F7D94;
+    height: 70%;
+}
+
+.rectangle {
+  width: 70%;
+  height: 50%;
+  background: #d3d3d3;
+}
+.rectangle1 {
+  width: 1000px;
+  height: 40px;
+  background: #d3d3d3;
+  text-align: center;
+    font-weight:200;
+}
+.rectangleVolver {
+  width: 150px;
+  height: 40px;
+  background: #d3d3d3;
+  text-align: center;
+    font-weight:200;
+}
+.boton-primario{
+	height: 150px;
+}
+.boton-primario:active{
+	background: #d3d3d3;
+}
+.volver{
+    
+}
