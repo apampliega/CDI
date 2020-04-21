@@ -46,16 +46,22 @@
 	<!-- info temperatura -->
 	<div class="row h-75">
 	        <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<div class="conainer "><img src="img/termometro.png">TEMPERATURA FRIGORÍFICO: +2º</div>
+	        	<div class="conainer "><img src="img/termometro.png">TEMPERATURA FRIGORÍFICO: </div>
+				<div id = "temperaturaFrigo"></div>
+				
 	        </div>
 
 	        <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<img src="img/termometro.png">TEMPERATURA CONGELADOR: -22º
+	        	<div class="conainer "><img src="img/termometro.png">TEMPERATURA CONGELADOR: </div>
+				<div id = "temperaturaCong"></div>
+				
 	        </div>
 	</div>
 
  
 	</div>
-
+	<script>
+	document.getElementById("temperaturaFrigo").innerHTML = localStorage.getItem("tempFrigo") + "º";
+	document.getElementById("temperaturaCong").innerHTML = localStorage.getItem("tempCong") + "º";
   </body>
 </html>
