@@ -14,28 +14,42 @@
     <!-- JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
     <!-- CSS -->
-    		<link rel="stylesheet" type="text/css" href="style_st.css">
+    <link rel="stylesheet" type="text/css" href="style_st.css">
 
 
     <title>Cambiar temperatura</title>
+	<script>
+	function cancelar(){
+	temp_nevera.value="";
+	temp_congelador.value="";
+	}
+	function guardar(){
+	if(temp_nevera.value < 10 && temp_nevera.value > 0)
+		localStorage.setItem("tempFrigo",temp_nevera.value);
+		document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
+
+	if(temp_congelador.value < -14 && temp_congelador.value > -33)
+		localStorage.setItem("tempCong",temp_congelador.value);
+		document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
+		
+	}
+	</script>
   </head>
-
-
+  
   <body style="background-color: #7F7C93;" class="viewport" >
-
+	
     <div class="container-fluid vh-100">
     	<!--botones de seleccion -->
 		<div class="row ">
 			<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
-				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="img/nevera.png"><span style="white-space: nowrap">CONTROL DE NEVERA</span></button>
+				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected"><img src="img/nevera.png"><span style="white-space: nowrap">CONTROL DE NEVERA</span></button>
 			</div>
 			
 			>>
 
 			<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5">
-				<button class="font-weight-bold rectangle rounded border border-secondar boton-primario"><img src="img/termometro.png"><span style="white-space: nowrap">CAMBIAR TEMPERATURA</span></button>
+				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected"><img src="img/termometro.png"><span style="white-space: nowrap">CAMBIAR TEMPERATURA</span></button>
 			</div>
 
 		</div>
@@ -43,34 +57,46 @@
 	<!-- info temperatura -->
 		<div class="row h-50">
 	        <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<img src="img/termometro.png">TEMPERATURA FRIGORÍFICO: +2º
+	        	<img src="img/termometro.png">
+				<div id="txt1"></div>
 	        </div>
+			
 
 	        <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<img src="img/termometro.png">TEMPERATURA CONGELADOR: -22º
+	        	<img src="img/termometro.png">
+				<div id="txt2"></div>
 	        </div>
 			
 			<div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
-	        	Nueva temperatura nevera: <input type="text" id="temp_nevera" name="temp_nevera"/>
+	        	Nueva temperatura nevera: <input type="number" min="1" max="9" id="temp_nevera" name="temp_nevera"/>
 	        </div>
 			<div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
-	        	Nueva temperatura congelador: <input type="text" id="temp_congelador" name="temp_congelador"/>
+	        	Nueva temperatura congelador: <input type="number" min="-32" max="-15" id="temp_congelador" name="temp_congelador"/>
 	        </div>
 
 			<div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
-	        	<input type="reset" value="Cancelar"/>
+	        	<button class="rectangleVolver rounded border" value="Cancelar" onclick="cancelar()">Cancelar</button>
 	        </div>
 			<div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
-	        	<input type="submit" value="Confirmar"/>
+	        	<button class="rectangleVolver rounded border" value="Confirmar" onclick="guardar()">Confirmar</button>
 	        </div>
 		</div>
-		
+	
 		<div class="row  float-left mt-5 pt-3 pl-5"> <!--fixed-bottom-->
 				<button class="font-weight rectangleVolver rounded border border-secondary sombreado" onclick="location.href='index.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
 		</div>
 		
  
 	</div>
-
+	
+	<script>
+	if(localStorage.tempFrigo);
+	else localStorage.setItem("tempFrigo",5);
+	document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
+	
+	if(localStorage.tempCong);
+	else localStorage.setItem("tempCong",-15);
+	document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
+	</script>
   </body>
 </html>
