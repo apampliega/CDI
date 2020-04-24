@@ -33,7 +33,7 @@
 
 
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
-            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="img/power.png"><span style="white-space: nowrap">ENCENDER/APAGAR FIRGORIFICO/CONGELADOR</span></button>
+            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="img/power.png"><span style="">ENCENDER/APAGAR FIRGORIFICO/CONGELADOR</span></button>
         </div>
 
      </div>
@@ -45,11 +45,12 @@
                 ESTADO FRIGORIFICO:
             </div>
                 <div class="estado_frigorifico">
-                    <button class="font-weight-bold rectangle rounded border border-secondary selected">
+                    <!-- añadair clase selected al boton al pulsar-->
+                    <button class="font-weight-bold rectangle rounded border border-secondary frigoOn selected" id="frigoOn">
                         <img src="img/power.png"><P><span style="white-space: nowrap">ENCENDIDO</span></P>
                     </button>
 
-                    <button class="font-weight-bold rectangle rounded border border-secondary">
+                    <button class="font-weight-bold rectangle rounded border border-secondary frigoOff" id="frigoOff">
                         <img src="img/power.png"><p><span style="white-space: nowrap">APAGADO</span></p>
                     </button>
                 </div>
@@ -60,11 +61,12 @@
                 ESTADO FRIGORIFICO:
             </div>
                 <div class="estado_congelador">
-                    <button class="font-weight-bold rectangle rounded border border-secondary selected">
+                    <!-- añadair clase selected al boton al pulsar-->
+                    <button class="font-weight-bold rectangle rounded border border-secondary congOn selected">
                         <img src="img/power.png"><P><span style="white-space: nowrap">ENCENDIDO</span></P>
                     </button>
 
-                    <button class="font-weight-bold rectangle rounded border border-secondary">
+                    <button class="font-weight-bold rectangle rounded border border-secondary congOff">
                         <img src="img/power.png"><p><span style="white-space: nowrap">APAGADO</span></p>
                     </button>
             </div>
