@@ -1,0 +1,17 @@
+-cambiar metaforas: unificarlas todas para que tengan la misam estetica general ()
+-Mensaje de confirmacion
+-Resaltar solo en el que estamos (ej:un marco mas gordo o suavidar/quitar sombra)
+-Resaltar el foco en el boton que no sea critico (haciendo que resalte mas)
+-No utilizar el mismo (la misma metafora) simbolo para on/off
+-en distribucion de alimentos indicar que son las puertas (con un texot vale)
+-cuidado con los botones con dos lineas
+-en comprar en paymarket en el desplegable poner "seleccionar alimento" o despliega o algo asi
+-sustituir el mensaje de "no se encuentra ese aleimento en la base de datos" xk el usuario no sabe que es una BD
+-el boton introducir alimento manualmente ponerlo en el medio (boton CTA o algo asi), destacarlo mas
+-la informacion de cantidad fecha caducidad etc siempre en el mismo sitio
+-en el recuadro para buscar no dejarlo en blanco, poner un texto dentro del recuadro
+-todo lo del rediselño de la tienda
+-evitar el paso de darle al boton de editar en lo de comprar 
+-cuidado con los dolares, cambiarlo por euros
+-mensaje de confirmacion al realizar la compra tambien
+-lo de "añadiendo" en distribucion de alimentos
