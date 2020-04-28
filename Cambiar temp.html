@@ -21,18 +21,21 @@
     <title>Cambiar temperatura</title>
 	<script>
 	function cancelar(){
-	temp_nevera.value="";
-	temp_congelador.value="";
+		temp_nevera.value="";
+		temp_congelador.value="";
 	}
 	function guardar(){
-	if(temp_nevera.value < 10 && temp_nevera.value > 0)
-		localStorage.setItem("tempFrigo",temp_nevera.value);
-		document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
+		if(((temp_nevera.value < 10 && temp_nevera.value > 0) || (temp_congelador.value < -14 && temp_congelador.value > -33))
+		&& (window.confirm("¿Estás seguro?"))){
+	
+			if(temp_nevera.value < 10 && temp_nevera.value > 0)
+				localStorage.setItem("tempFrigo",temp_nevera.value);
+				document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
 
-	if(temp_congelador.value < -14 && temp_congelador.value > -33)
-		localStorage.setItem("tempCong",temp_congelador.value);
-		document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
-		
+			if(temp_congelador.value < -14 && temp_congelador.value > -33)
+				localStorage.setItem("tempCong",temp_congelador.value);
+				document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
+		}
 	}
 	</script>
   </head>
@@ -83,7 +86,7 @@
 		</div>
 	
 		<div class="row  float-left mt-5 pt-3 pl-5"> <!--fixed-bottom-->
-				<button class="font-weight rectangleVolver rounded border border-secondary sombreado" onclick="location.href='index.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+				<button class="font-weight rectangleVolver rounded border border-secondary sombreado" onclick="location.href='Control_nevera.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
 		</div>
 		
  
