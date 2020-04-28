@@ -65,5 +65,3 @@ $('.congOff ').click(function() {
     }
  }); 
 
-
-
