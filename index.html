@@ -16,7 +16,7 @@
 
 
     <!-- CSS -->
-    		<link rel="stylesheet" type="text/css" href="style_st.css">
+    	<link rel="stylesheet" type="text/css" href="style_st.css">
 
 
     <title>Panel de control nevera</title>
@@ -46,13 +46,13 @@
 	<!-- info temperatura -->
 	<div class="row h-75">
 	        <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<div class="conainer "><img src="img/termometro.png">TEMPERATURA FRIGORÍFICO: </div>
+	        	<img src="img/termometro.png">
 				<div id = "temperaturaFrigo"></div>
 				
 	        </div>
 
 	        <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<div class="conainer "><img src="img/termometro.png">TEMPERATURA CONGELADOR: </div>
+	        	<img src="img/termometro.png">
 				<div id = "temperaturaCong"></div>
 				
 	        </div>
@@ -61,7 +61,13 @@
  
 	</div>
 	<script>
-	document.getElementById("temperaturaFrigo").innerHTML = localStorage.getItem("tempFrigo") + "º";
-	document.getElementById("temperaturaCong").innerHTML = localStorage.getItem("tempCong") + "º";
+	if(localStorage.tempFrigo);
+	else localStorage.setItem("tempFrigo",5);
+	document.getElementById("temperaturaFrigo").innerHTML = "TEMPERATURA FRIGORIFICO: " + localStorage.getItem("tempFrigo") + "º";
+	
+	if(localStorage.tempCong);
+	else localStorage.setItem("tempCong",-15);
+	document.getElementById("temperaturaCong").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
+	</script>
   </body>
 </html>
