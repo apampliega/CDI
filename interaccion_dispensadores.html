@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!--Popper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <!-- CSS -->
+    	<link rel="stylesheet" type="text/css" href="style_st.css">
+		
+    <title>Interacción Dispensadores</title>
+	
+	<script>
+	
+	function abrirDispBeb(){
+		localStorage.setItem("deposito",localStorage.getItem("deposito") - 20);
+		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
+		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito lleno-->
+	}
+	function abrirDispHielo(){
+		localStorage.setItem("hielo",localStorage.getItem("hielo") - 20);
+		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
+		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+	}
+	
+	
+	//guardar datos deposito bebida
+	$(document).ready(function(){
+		$('.dispBebOpen ').click(function() {
+			$('.dispBebOpen ').removeClass('selected');
+			$('.dispBebClose ').removeClass('selected');
+			$(this).addClass('selected');
+			//localstorage
+			localStorage.setItem('estadoDispBebida', 'open');
+			abrirDispBeb();
+		});
+
+		$('.dispBebClose ').click(function() {
+			$('.dispBebOpen ').removeClass('selected');
+			$('.dispBebClose ').removeClass('selected');
+			$(this).addClass('selected');
+			//localstorage
+			localStorage.setItem('estadoDispBebida', 'close');
+		});
+
+	});
+
+	//lee la variable y aplica la clase
+	$(document).ready(function(){   
+
+		if(localStorage.getItem('estadoDispBebida') == 'open') {
+			$(".dispBebOpen").addClass("selected");
+			$(".dispBebClose").removeClass("selected");
+		} else{
+			$(".dispBebClose").addClass("selected");
+			$(".dispBebOpen").removeClass("selected");
+		}
+	});
+ 
+	//guardar datos deposito hielo
+	$(document).ready(function(){
+		$('.dispHieloOpen ').click(function() {
+		$('.dispHieloOpen ').removeClass('selected');
+		$('.dispHieloClose ').removeClass('selected');
+		$(this).addClass('selected');
+		//localstorage
+		localStorage.setItem('estadoDispHielo', 'open');
+		abrirDispHielo();
+		});
+
+		$('.dispHieloClose ').click(function() {
+			$('.dispHieloOpen ').removeClass('selected');
+			$('.dispHieloClose ').removeClass('selected');
+			$(this).addClass('selected');
+		//localstorage
+		localStorage.setItem('estadoDispHielo', 'close');
+		});
+
+	});
+
+	//lee la variable y aplica la clase
+	$(document).ready(function(){   
+
+		if(localStorage.getItem('estadoDispHielo') == 'open') {
+			$(".dispHieloOpen").addClass("selected");
+			$(".dispHieloClose").removeClass("selected");
+		} else{
+			$(".dispHieloClose").addClass("selected");
+			$(".dispHieloOpen").removeClass("selected");
+		}
+	}); 
+	</script>
+  </head>
+
+
+  <body class="viewport" >
+
+    <div class="container-fluid vh-100">
+    	<!--botones de seleccion -->
+		<div class="row ">
+			<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
+				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected" onclick="location.href='Control_nevera.html'"><img src="img/nevera.png"><span style="white-space: nowrap">CONTROL DE NEVERA</span></button> <span class="font-weight-bold display-4">>></span>
+			</div>
+			
+			<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5">
+				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="img/nevera.png"><span style="white-space: nowrap">INTERACCIÓN DISPENSADORES</span></button>
+			</div>
+
+		</div>
+
+		<!-- info depósitos -->
+		<div class="row h-50">
+	        <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
+	        	<img id="dispensadorBebida">
+				<div id="txt1"></div>
+	        </div>
+			
+	        <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
+	        	<img id ="dispensadorHielo">
+				<div id="txt2"></div>
+	        </div>
+		
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto "> 
+				<div class="font-weight-bold" style="color:white;">
+					Estado dispensador bebida:
+				</div>
+                <div class="estado_frigorifico">
+                    <!-- añadair clase selected al boton al pulsar-->
+                    <button class="font-weight-bold rectangle rounded border border-secondary dispBebClose selected" id="dispBebClose">
+                        <img src="img/power.png"><P><span style="white-space: nowrap">Cerrado</span></P>
+                    </button>
+
+                    <button class="font-weight-bold rectangle rounded border border-secondary dispBebOpen" id="dispBebOpen">
+                        <img src="img/power.png"><p><span style="white-space: nowrap">Abierto</span></p>
+                    </button>
+                </div>
+			</div>
+			
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto "> 
+				<div class="font-weight-bold" style="color:white;">
+					Estado dispensador hielo:
+				</div>
+                <div class="estado_congelador">
+                    <!-- añadair clase selected al boton al pulsar-->
+                    <button class="font-weight-bold rectangle rounded border border-secondary dispHieloClose selected" id="dispHieloClose">
+                        <img src="img/power.png"><P><span style="white-space: nowrap">Cerrado</span></P>
+                    </button>
+
+                    <button class="font-weight-bold rectangle rounded border border-secondary dispHieloOpen" id="dispHieloOpen">
+                        <img src="img/power.png"><p><span style="white-space: nowrap">Abierto</span></p>
+                    </button>
+                </div>
+			</div>
+		</div>
+		
+		<div class="row  float-left mt-5 pt-3 pl-5"> <!--fixed-bottom-->
+			<button class="font-weight rectangleVolver rounded border border-secondary sombreado" onclick="location.href='Control_nevera.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+		</div>
+
+ 
+	</div>
+	<script>
+		if(localStorage.deposito);
+		else localStorage.setItem("deposito",50);
+		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
+		
+		if (localStorage.deposito < 12.5)
+		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito vacío-->;
+		else if(localStorage.deposito < 37.5)
+		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito al 25%-->;
+		else if(localStorage.deposito < 62.5)
+		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito al 50%-->;
+		else if(localStorage.deposito < 87.5)
+		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito 75%-->;
+		else document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+		
+		if(localStorage.hielo);
+		else localStorage.setItem("hielo",50);
+		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
+		
+		if (localStorage.hielo < 12.5)
+		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito vacío-->;
+		else if(localStorage.hielo < 37.5)
+		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito al 25%-->;
+		else if(localStorage.hielo < 62.5)
+		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito al 50%-->;
+		else if(localStorage.hielo < 87.5)
+		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito 75%-->;
+		else document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+	</script>
+  </body>
+</html>
