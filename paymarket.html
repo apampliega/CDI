@@ -27,21 +27,155 @@
         h3 {text-align: center; font-size: 20px;}
     </style>
       
-    <script>
-        var mensaje = "gana la de fuera";
-        var contador=document.getElementById("contador");
-        function cancelar(){
-		  contador_productos.value="";
-	    }
-        
-        function guardar(){
-            var contador=0;
-		}
-	}
-        
-      
-      
-      </script>
+        <script>
+        window.onload = function () {
+            // Variables
+            let baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: 'Patata',
+                    precio: 1,
+                    imagen: 'https://source.unsplash.com/random/500x500/?potato&sig=1'
+                },
+                {
+                    id: 2,
+                    nombre: 'Cebolla',
+                    precio: 1.2,
+                    imagen: 'https://source.unsplash.com/random/500x500/?onion&sig=2'
+                },
+                {
+                    id: 3,
+                    nombre: 'Calabacin',
+                    precio: 2.1,
+                    imagen: 'https://source.unsplash.com/random/500x500/?zucchini&sig=3'
+                },
+                {
+                    id: 4,
+                    nombre: 'Fresas',
+                    precio: 0.6,
+                    imagen: 'https://source.unsplash.com/random/500x500/?burrs&sig=4'
+                }
+
+            ]
+            let $items = document.querySelector('#items');
+            let carrito = [];
+            let total = 0;
+            let $carrito = document.querySelector('#carrito');
+            let $total = document.querySelector('#total');
+            // Funciones
+            function renderItems () {
+                for (let info of baseDeDatos) {
+                    // Estructura
+                    let miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    let miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    // Titulo
+                    let miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info['nombre'];
+                    // Imagen
+                    let miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info['imagen']);
+                    // Precio
+                    let miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = info['precio'] + '€';
+                    // Boton 
+                    let miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info['id']);
+                    miNodoBoton.addEventListener('click', anyadirCarrito);
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    $items.appendChild(miNodo);
+                }
+            }
+
+            function anyadirCarrito () {
+                // Anyadimos el Nodo a nuestro carrito
+                carrito.push(this.getAttribute('marcador'))
+                // Calculo el total
+                calcularTotal();
+                // Renderizamos el carrito 
+                renderizarCarrito();
+            }
+
+            function renderizarCarrito () {
+                // Vaciamos todo el html
+                $carrito.textContent = '';
+                // Quitamos los duplicados
+                let carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach(function (item, indice) {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    let numeroUnidadesItem = carrito.reduce(function (total, itemId) {
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    let miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} - ${miItem[0]['precio']}€`;
+                    // Boton de borrar
+                    let miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.setAttribute('item', item);
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(miBoton);
+                    $carrito.appendChild(miNodo);
+                })
+            }
+
+            function borrarItemCarrito () {
+                console.log()
+                // Obtenemos el producto ID que hay en el boton pulsado
+                let id = this.getAttribute('item');
+                // Borramos todos los productos
+                carrito = carrito.filter(function (carritoId) {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+                // Calculamos de nuevo el precio
+                calcularTotal();
+            }
+
+            function calcularTotal () {
+                // Limpiamos precio anterior
+                total = 0;
+                // Recorremos el array del carrito
+                for (let item of carrito) {
+                    // De cada elemento obtenemos su precio
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    total = total + miItem[0]['precio'];
+                }
+                // Formateamos el total para que solo tenga dos decimales
+                let totalDosDecimales = total.toFixed(2);
+                // Renderizamos el precio en el HTML
+                $total.textContent = totalDosDecimales;
+            }
+            // Eventos
+
+            // Inicio
+            renderItems();
+        } 
+    </script>
   </head>
 
 
@@ -63,24 +197,11 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 pt-3 pl-5"> <!--pt:padding top-->
         	<button class="font-weight-bold rectangle rounded border border-secondary  p-3 selected"><img src="img/old/comprar paymarket.png">COMPRAR EN PAYMARKET</button>
         </div>
-       
-          <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 pt-3 pl-5"><span class="font-weight-bold">ELEMENTOS EN EL CARRO:</span><div mensaje></div>
-          </div>
-            
-          <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 d-flex justify-content-center align-items-center">(Pincha el cuadrado para ver los elementos del carro)
-          </div>
-        
-          <!--<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 pt-3 pl-5 d-flex justify-content-center align-items-center"><span class="font-weight-bold">ELEMENTOS EN EL CARRO: </span><output type="number" min="0" id="contador" name="contado_prodcutos"/>
-        <div class="col-6 col-12 col-sm-12 col-md-4 col-lg-9 col-xl-3 pt-3 pl-5 d-flex justify-content-center align-items-center">(Pincha el cuadrado para ver los elementos del carro)
-          </div>
-              <div class="col-xs-6">Column 1</div>
-              <div class="col-xs-6">Column 2</div>
-        </div>*/-->
           
         </div>
         
        <div class="row m-5 col-12 pt-5 pl-5">
-        <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 d-flex justify-content-center align-items-center">
+        <!--<div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 d-flex justify-content-center align-items-center">
             <span class="font-weight-bold">
 	        	FAMILIA DE ALIMENTOS
             </span>
@@ -105,8 +226,18 @@
                   <input type="text" placeholder="Search..">
                     <meta name="keywords" content="pan, aceite, verduras"/>
                 </div>
-          </div>
-          
+          </div>-->
+                      <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Carrito</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span>&euro;</p>
+            </aside>
         </div>
     <!--cancelar-realizar compra -->
     <div class="row  float-left mt-5"> <!--fixed-bottom-->
@@ -115,7 +246,7 @@
             </div>
         
          <div class="pt-3 pl-5 ">
-                <button class="font-weight rectangleCompra rounded border border-secondary sombreado" onclick="location.href='menu-productos.html'">REALIZAR COMPRA <img src="https://img.icons8.com/windows/32/000000/money-bag.png" width="30" height="30"></button>
+                <button class="font-weight rectangleCompra rounded border border-secondary sombreado">REALIZAR COMPRA <img src="https://img.icons8.com/windows/32/000000/money-bag.png" width="30" height="30"></button>
              </div>
         </div>            
 	</div>
