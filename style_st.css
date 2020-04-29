@@ -10,6 +10,14 @@ body {
   background: #d3d3d3;
 }
 
+.rectangle0 {
+  width: 90%;
+  height: 100%;
+  background: #d3d3d3;
+  text-align: center;
+    font-weight:200;
+}
+
 .rectangle1 {
   width: 1000px;
   height: 40px;
