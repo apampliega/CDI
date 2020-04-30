@@ -16,24 +16,61 @@
 
     
     <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../style_st.css">
-    <script src="index.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="style_st.css">
+  <!--  <script src="index.js" type="text/javascript"></script> -->
 
     <title>Encender / Apagar</title>
-    
+    <script>
+	function encenderFrigo(){
+		document.getElementById("frigoOn").classList.remove('selected');
+		document.getElementById("frigoOff").classList.remove('selected');
+		document.getElementById("frigoOn").classList.add('selected');
+		localStorage.setItem("estadoFrigorifico", "on");
+	}
+	
+	function encenderCong(){
+		document.getElementById("congOn").classList.remove('selected');
+		document.getElementById("congOff").classList.remove('selected');
+		document.getElementById("congOn").classList.add('selected');
+		localStorage.setItem("estadoCongelador", "on");
+	}
+
+	
+	function apagarFrigo(){
+		if(window.confirm("Estás seguro?")){
+			document.getElementById("frigoOn").classList.remove('selected');
+			document.getElementById("frigoOff").classList.remove('selected');
+			document.getElementById("frigoOff").classList.add('selected');
+			localStorage.setItem("estadoFrigorifico", "off");
+		}
+	}
+	
+	function apagarCong(){
+		if(window.confirm("Estás seguro?")){
+			document.getElementById("congOn").classList.remove('selected');
+			document.getElementById("congOff").classList.remove('selected');
+			document.getElementById("congOff").classList.add('selected');
+			localStorage.setItem("estadoCongelador", "off");
+		}
+	}
+	</script>
   </head>
-<body style="background-color: #7F7C93;" class="viewport" >
+<body style="background-color: #7F7C93;" class="viewport">
 
   <div class="container-fluid vh-100">
         <!--botones de seleccion -->
       <div class="row ">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
-            <button class="font-weight-bold rectangle rounded border border-secondary p-3 selected "><img src="img/nevera.png"><span style="white-space: nowrap">CONTROL DE NEVERA</span></button> <span class="font-weight-bold display-4">>></span>
+            <button class="font-weight-bold rectangle rounded border border-secondary p-3 selected " onclick="location.href='Control_nevera.html'"><img src="img/nevera.png"><span style="white-space: nowrap">CONTROL DE NEVERA</span></button> 
+        </div>
+          
+        <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 pt-5"> 
+            <span class="font-weight-bold display-4">>></span>
         </div>
 
 
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
-            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="img/power.png"><span style="">ENCENDER/APAGAR FIRGORIFICO/CONGELADOR</span></button>
+            <button class="font-weight-bold rectangle rounded border border-secondary p-3 selected " onclick="location.href='Encender_Apagarv2.html'"><img src="img/power.png"><span style="">ENCENDER/APAGAR FIRGORIFICO/CONGELADOR</span></button>
         </div>
 
      </div>
@@ -46,7 +83,7 @@
             </div>
                 <div class="estado_frigorifico">
                     <!-- añadair clase selected al boton al pulsar-->
-                    <button class="font-weight-bold rectangle rounded border border-secondary frigoOn selected" id="frigoOn">
+                    <button class="font-weight-bold rectangle rounded border border-secondary" id="frigoOn">
                         <img src="img/power.png"><P><span style="white-space: nowrap">ENCENDIDO</span></P>
                     </button>
 
@@ -62,14 +99,14 @@
             </div>
                 <div class="estado_congelador">
                     <!-- añadair clase selected al boton al pulsar-->
-                    <button class="font-weight-bold rectangle rounded border border-secondary congOn selected">
+                    <button class="font-weight-bold rectangle rounded border border-secondary congOn " id="congOn">
                         <img src="img/power.png"><P><span style="white-space: nowrap">ENCENDIDO</span></P>
                     </button>
 
-                    <button class="font-weight-bold rectangle rounded border border-secondary congOff">
+                    <button class="font-weight-bold rectangle rounded border border-secondary congOff" id="congOff">
                         <img src="img/power.png"><p><span style="white-space: nowrap">APAGADO</span></p>
                     </button>
-            </div>
+				</div>
         </div>
 
     </div>
@@ -77,11 +114,45 @@
         <!--Volver -->
         <div class="row  float-left mt-5"> 
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5  ">
-				<a href="index.html"><button class="font-weight-bold rectangle rounded border border-secondary  p-3" style="width: 300px;"><img src="img/volver.png" width="30" height="30"><span >VOLVER</span></button></a>
+				<a href="control_nevera.html"><button class="font-weight-bold rectangle rounded border border-secondary  p-3" style="width: 300px;"><img src="img/volver.png" width="30" height="30"><span >VOLVER</span></button></a>
 			</div>
 		</div>
 
 
     </div>
+	<script>
+		if(localStorage.estadoFrigorifico){
+			if(localStorage.getItem("estadoFrigorifico") == "on") {
+			document.getElementById("frigoOn").classList.add("selected");
+			document.getElementById("frigoOff").classList.remove("selected");
+			} else{
+			document.getElementById("frigoOff").classList.add("selected");
+			document.getElementById("frigoOn").classList.remove("selected");
+			}
+		}else{
+			document.getElementById("frigoOn").classList.add("selected")
+			document.getElementById("frigoOff").classList.remove("selected");
+			localStorage.setItem("estadoFrigorifico", "on");
+		}
+		
+		if(localStorage.estadoCongelador){
+			if(localStorage.getItem("estadoCongelador") == "on") {
+			document.getElementById("congOn").classList.add("selected");
+			document.getElementById("congOff").classList.remove("selected");
+			} else{
+			document.getElementById("congOff").classList.add("selected");
+			document.getElementById("congOn").classList.remove("selected");
+			}
+		}else{
+			document.getElementById("congOn").classList.add("selected");
+			document.getElementById("congOff").classList.remove("selected");
+			localStorage.setItem("estadoCongelador", "on");
+		}
+		
+		document.getElementById("frigoOn").addEventListener("click",encenderFrigo);
+		document.getElementById("frigoOff").addEventListener("click",apagarFrigo);
+		document.getElementById("congOn").addEventListener("click",encenderCong);
+		document.getElementById("congOff").addEventListener("click",apagarCong);
+	</script>
 </body>
 </html>
