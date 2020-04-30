@@ -21,7 +21,6 @@
     <title>Interacción Dispensadores</title>
 	
 	<script>
-	
 	function abrirDispBeb(){
 		localStorage.setItem("deposito",localStorage.getItem("deposito") - 20);
 		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
@@ -32,7 +31,6 @@
 		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
 		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
 	}
-	
 	
 	//guardar datos deposito bebida
 	$(document).ready(function(){
@@ -197,6 +195,7 @@
 		else if(localStorage.hielo < 87.5)
 		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito 75%-->;
 		else document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+		
 	</script>
   </body>
 </html>
