@@ -14,18 +14,14 @@
     <!-- JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" media="only screen and (max-width: 1068px)" href="estilos.css">
     <!-- CSS -->
-    		<link rel="stylesheet" type="text/css" href="style_st.css">
+    <link rel="stylesheet" type="text/css" href="style_st.css">
 
 
-    <title>Introducir lacteos</title>
+    <title>Consultar leche</title>
     
   </head>
-  <script type="text/javascript">
-      document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
-  </script>
+  
 
   <body 
    style="background-color: #7F7C93;"
@@ -70,6 +66,7 @@
                    <br>
                </form>
             </div>
+		</div>
         <div>
     
         <div class="row  float-left mt-5"> <!--fixed-bottom-->
@@ -80,6 +77,11 @@
                 </div>
         </div> 
 
-	</div> 
+		</div> 
+	</div>
+	
 </body>
+  <script>
+    document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
+  </script>
 </html>
