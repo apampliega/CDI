@@ -6,7 +6,7 @@ body {
 .rectangle {
   width: 80%;
   height: 100%;
- // border-radius: 8px;
+ border-radius: 8px;
   background: #d3d3d3;
 }
 
@@ -110,6 +110,10 @@ input:checked[type="checkbox"]:before
     left: 40px
 }
 
-
+.boton-compartimento:hover{
+  -moz-box-shadow:    inset 0 0 7vh #000000;
+   -webkit-box-shadow: inset 0 0 7vh #000000;
+   box-shadow:         inset 0 0 7vh #000000;
+}
 
 
