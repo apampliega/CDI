@@ -20,7 +20,7 @@
     		<link rel="stylesheet" type="text/css" href="style_st.css">
 
 
-    <title>Introducir lacteos</title>
+    <title>Datos pepinos</title>
     
   </head>
 
@@ -89,6 +89,12 @@
 
 	</div> 
     <script type="text/javascript">
+        var fecha_compra_pepinos;
+        var fecha_envasado_pepinos;
+        var fecha_caducidad_pepinos;
+        var dias_dentro_pepinos;
+        var cantidad_pepinos;
+
         function cancelar(){
             fecha_compra.value="";
             fecha_envasado.value="";
@@ -98,23 +104,13 @@
         }
         function guardar(){
             if(window.confirm("¿Estás seguro?")){
-        
-                if(temp_nevera.value < 10 && temp_nevera.value > 0)
-                    localStorage.setItem("tempFrigo",temp_nevera.value);
-                    document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
-
-                if(temp_congelador.value < -14 && temp_congelador.value > -33)
-                    localStorage.setItem("tempCong",temp_congelador.value);
-                    document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
+                localStorage.setItem("fecha_compra_pepinos",fecha_compra.value);
+                localStorage.setItem("fecha_envasado_pepinos",fecha_envasado.value);
+                localStorage.setItem("fecha_caducidad_pepinos",fecha_caducidad.value);
+                localStorage.setItem("dias_dentro_pepinos",dias_dentro.value);
+                localStorage.setItem("cantidad_pepinos",cantidad.value);
             }
         }
-        if(localStorage.tempFrigo);
-        else localStorage.setItem("tempFrigo",5);
-        document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
-        
-        if(localStorage.tempCong);
-        else localStorage.setItem("tempCong",-15);
-        document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
     </script>
 </body>
 </html>
