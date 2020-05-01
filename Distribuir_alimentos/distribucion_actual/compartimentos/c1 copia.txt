@@ -21,16 +21,15 @@
     <title>Distribucion</title>
     <script>
         $(document).ready(function(){
-          $("button").click(function(){
-            $(".fase1").hide(); //no funciona poner los ms de la animacion
-            $(".fase2").show(); //mostramos el dropdown
+          $(".parte-izq-botones").click(function(){
+            $(".parte-izq-botones").hide(); //no funciona poner los ms de la animacion
+            $(".desplegable-tabla").show(); //mostramos el dropdown
           });
         });
 
         $(document).ready(function(){
           $(".lacteos").click(function(){
-            $(".fase1").hide(); //no funciona poner los ms de la animacion
-            $(".fase2").show(); //mostramos el dropdown
+            //$(".fase1").hide(); //no funciona poner los ms de la animacion
             $(".fase3").hide(); //quitamos el resto de categorias
             $(".lacteos").show(); //mostramos los lacteos
           });
@@ -38,8 +37,7 @@
 
         $(document).ready(function(){
           $(".carnes").click(function(){
-            $(".fase1").hide(); //no funciona poner los ms de la animacion
-            $(".fase2").show(); //mostramos el dropdown
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
             $(".fase3").hide(); //quitamos el resto de categorias
             $(".carnes").show(); //mostramos las carnes
           });
@@ -47,26 +45,24 @@
 
         $(document).ready(function(){
           $(".hortalizas").click(function(){
-            $(".fase1").hide(); //no funciona poner los ms de la animacion
-            $(".fase2").show(); //mostramos el dropdown
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
             $(".fase3").hide(); //quitamos el resto de categorias
-            $(".hortalizas").show(); //mostramos las hortalizas
+            $(".hortalizas").show(); //mostramos las carnes
           });
         });
+
         $(document).ready(function(){
           $(".frutas").click(function(){
-            $(".fase1").hide(); //no funciona poner los ms de la animacion
-            $(".fase2").show(); //mostramos el dropdown
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
             $(".fase3").hide(); //quitamos el resto de categorias
-            $(".frutas").show(); //mostramos las frutas
+            $(".frutas").show(); //mostramos las carnes
           });
         });
         $(document).ready(function(){
           $(".bebidas").click(function(){
-            $(".fase1").hide(); //no funciona poner los ms de la animacion
-            $(".fase2").show(); //mostramos el dropdown
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
             $(".fase3").hide(); //quitamos el resto de categorias
-            $(".bebidas").show(); //mostramos las bebidas
+            $(".bebidas").show(); //mostramos las carnes
           });
         });
 
@@ -75,16 +71,39 @@
 
 
 
-var leche = 0;
+
+var var_leche = 0;
 $(function() {
   $("#leche").click(function() {
 
-    leche++;
-   // $(this).text('' + value);
-    alert(leche);
+    var_leche++;
+   $('#var_leche').empty().append(var_leche);
+   if (var_leche==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="var_leche">'+var_leche+'</td><td>leche </td><td><button class="btn btn-danger eliminarLeche">X</button></td></tr>');
+   }
+   if (var_leche!=0) {
+   
+   $('#var_leche').empty().append(var_leche);
+   }
+   if (var_leche==0) {
+    $('#fila_leche').empty();
+   }
+
   });
+
+  $('.eliminarLeche').click(function(){
+    alert("asd");
+
 });
 
+
+});
+
+
+
+function guardaralimentos(){
+    localStorage.setItem("var_leche", "on");
+}
 
     function encenderFrigo(){
         document.getElementById("frigoOn").classList.remove('selected');
@@ -162,70 +181,61 @@ $(function() {
 
 
 <div class="font-weight-bold" style="color:white;">COMPARTIMENTO CONGELADOR 1</div>
-<!--sI NO HAY NINGUN ALIMENTO-->
-<p><div class="font-weight-bold fase1" style="color:white;">NO SE ENCUENTRA NINGUN ALIMENTO</div></p>
- <button type="button" class="btn-lg btn-block font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>
+<!--sI NO HAY NINGUN ALIMENTO
+<p><div class="font-weight-bold fase1 no-alimentos" style="color:white; display: none">NO SE ENCUENTRA NINGUN ALIMENTO</div></p>
+ <button type="button" class="btn-lg btn-block font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%;display:none"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>-->
 
 <!--si hay alimentos-->
-<table class="table table-hover table-secondary   border border-secondary boton-primario fase1">
-  <thead>
-    <tr>
-      <th scope="col">CANTIDAD</th>
-      <th scope="col">DESCRIPCIÓN</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-  
-      <td>1</td>
-      <td>Emperador</td>
-
-    </tr>
-    <tr>
- 
-      <td>2</td>
-      <td>Leche</td>
-
-    </tr>
-    <tr>
-   
-      <td>3</td>
-      <td>Zanahoria</td>
-    </tr>
-  </tbody>
-</table>
-
 <div class="modal-body row">
   <div class="col-md-6">
-    <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>
-  </div>
-  <div class="col-md-6">
-    <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%"> EDITAR <img src="../../../img/editar.png"></button>
-  </div>
-</div>
 
+    <table class="table table-hover table-secondary   border border-secondary fase1 tabla" id="tablac1">
+      <thead>
+        <tr>
+          <th scope="col">CANTIDAD</th>
+          <th scope="col">DESCRIPCIÓN</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
 
-
-<!--dropdown-->
-<div class="dropdown fase2" style="display: none;">
-  <button class="btn btn-secondary dropdown-toggle font-weight-bold" style="height: 100px;width: 300px; background: #d3d3d3; color: black" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    SELECCIONA UNA OPCIÓN
-  </button>
-  <div class="dropdown-menu" >
-    <button class="dropdown-item lacteos" type="button">LÁCTEOS</button>
-    <button class="dropdown-item carnes" type="button">CARNES, HUEVOS Y PESCADO</button>
-    <button class="dropdown-item hortalizas" type="button">HORTALIZAS Y VERDURAS</button>
-    <button class="dropdown-item frutas" type="button" >FRUTAS</button>
-    <button class="dropdown-item bebidas" type="button">BEBIDAS</button>
-  </div>
+      </tbody>
+    </table>
 </div>
 
 
 
 
-<!-- alimentos -------------------------------------------------->
+<!--botones ñadir editar-->
+  <div class="col-md-6 ">
 
+    <div class="modal-body row parte-izq-botones">
+      <div class="col-md-6">
+        <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1 boton-tabla" style="width: 100%"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1 boton-tabla" style="width: 100%"> EDITAR <img src="../../../img/editar.png"></button>
+      </div>
+    </div>
+
+
+
+    <!--dropdown-->
+    <div class="dropdown desplegable-tabla"  style="display: none;"> <!--<div class="dropdown fase2" style="display: none;">--->
+      <button class="btn btn-secondary dropdown-toggle font-weight-bold" style="height: 100px;width: 300px; background: #d3d3d3; color: black" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        SELECCIONA UNA OPCIÓN
+      </button>
+      <div class="dropdown-menu" >
+        <button class="dropdown-item lacteos" type="button">LÁCTEOS</button>
+        <button class="dropdown-item carnes" type="button">CARNES, HUEVOS Y PESCADO</button>
+        <button class="dropdown-item hortalizas" type="button">HORTALIZAS Y VERDURAS</button>
+        <button class="dropdown-item frutas" type="button" >FRUTAS</button>
+        <button class="dropdown-item bebidas" type="button">BEBIDAS</button>
+      </div>
+    </div>
+
+
+ <div class="dropdown alimentos-tabla"  style="display: block;">  <!--el que contiene todos los alimentos-->
 <!--fase 3 lacteos-->
  <div class="col-12 pt-5 pl-5 fase3 lacteos" style="display: none;">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
@@ -340,12 +350,28 @@ $(function() {
     </div>
 
 
-<div class="counter">
-  <span>You have clicked this page: </span><span id="count">0</span><span> times.</span>
-  <div class="message"></div>
-  </div>
 
-    <div class="row  float-left mt-5"> <!--fixed-bottom-->
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- alimentos -------------------------------------------------->
+
+
+
+    <div class="row  float-left mt-5 fixed-bottom"> <!--fixed-bottom-->
             <div class="pt-3 pl-5 ">
             
                     <button class="font-weight-bold rectangleVolver rounded border border-secondary sombreado" onclick="location.href='../distribuir_alimentos.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
