@@ -22,14 +22,34 @@
 	
 	<script>
 	function abrirDispBeb(){
-		localStorage.setItem("deposito",localStorage.getItem("deposito") - 20);
+		if(localStorage.getItem("deposito")>0){
+			localStorage.setItem("deposito",localStorage.getItem("deposito") - 25);
+		}
 		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
-		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito lleno-->
+		if (localStorage.deposito < 12.5)
+		document.getElementById("dispensadorBebida").src = "img/old/vacio.png";
+		else if(localStorage.deposito < 37.5)
+		document.getElementById("dispensadorBebida").src = "img/old/menosdemitadlleno.png";
+		else if(localStorage.deposito < 62.5)
+		document.getElementById("dispensadorBebida").src = "img/old/mitadlleno.png";
+		else if(localStorage.deposito < 87.5)
+		document.getElementById("dispensadorBebida").src = "img/old/masdemitadlleno.png";
+		else document.getElementById("dispensadorBebida").src = "img/old/lleno.png";
 	}
 	function abrirDispHielo(){
-		localStorage.setItem("hielo",localStorage.getItem("hielo") - 20);
+		if(localStorage.getItem("hielo")>0){
+			localStorage.setItem("hielo",localStorage.getItem("hielo") - 25);
+		}
 		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
-		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+		if (localStorage.hielo < 12.5)
+		document.getElementById("dispensadorHielo").src = "img/old/vacio.png";
+		else if(localStorage.hielo < 37.5)
+		document.getElementById("dispensadorHielo").src = "img/old/menosdemitadlleno.png";
+		else if(localStorage.hielo < 62.5)
+		document.getElementById("dispensadorHielo").src = "img/old/mitadlleno.png";
+		else if(localStorage.hielo < 87.5)
+		document.getElementById("dispensadorHielo").src = "img/old/masdemitadlleno.png";
+		else document.getElementById("dispensadorHielo").src = "img/old/lleno.png";
 	}
 	
 	//guardar datos deposito bebida
@@ -137,7 +157,6 @@
 					Estado dispensador bebida:
 				</div>
                 <div class="estado_frigorifico">
-                    <!-- añadair clase selected al boton al pulsar-->
                     <button class="font-weight-bold rectangle rounded border border-secondary dispBebClose selected" id="dispBebClose">
                         <img src="img/power.png"><P><span style="white-space: nowrap">Cerrado</span></P>
                     </button>
@@ -153,7 +172,6 @@
 					Estado dispensador hielo:
 				</div>
                 <div class="estado_congelador">
-                    <!-- añadair clase selected al boton al pulsar-->
                     <button class="font-weight-bold rectangle rounded border border-secondary dispHieloClose selected" id="dispHieloClose">
                         <img src="img/power.png"><P><span style="white-space: nowrap">Cerrado</span></P>
                     </button>
@@ -177,28 +195,28 @@
 		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
 		
 		if (localStorage.deposito < 12.5)
-		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito vacío-->;
+		document.getElementById("dispensadorBebida").src = "img/old/vacio.png";
 		else if(localStorage.deposito < 37.5)
-		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito al 25%-->;
+		document.getElementById("dispensadorBebida").src = "img/old/menosdemitadlleno.png";
 		else if(localStorage.deposito < 62.5)
-		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito al 50%-->;
+		document.getElementById("dispensadorBebida").src = "img/old/mitadlleno.png";
 		else if(localStorage.deposito < 87.5)
-		document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito 75%-->;
-		else document.getElementById("dispensadorBebida").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+		document.getElementById("dispensadorBebida").src = "img/old/masdemitadlleno.png";
+		else document.getElementById("dispensadorBebida").src = "img/old/lleno.png";
 		
 		if(localStorage.hielo);
 		else localStorage.setItem("hielo",50);
 		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
 		
 		if (localStorage.hielo < 12.5)
-		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito vacío-->;
+		document.getElementById("dispensadorHielo").src = "img/old/vacio.png";
 		else if(localStorage.hielo < 37.5)
-		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito al 25%-->;
+		document.getElementById("dispensadorHielo").src = "img/old/menosdemitadlleno.png";
 		else if(localStorage.hielo < 62.5)
-		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito al 50%-->;
+		document.getElementById("dispensadorHielo").src = "img/old/mitadlleno.png";
 		else if(localStorage.hielo < 87.5)
-		document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito 75%-->;
-		else document.getElementById("dispensadorHielo").src = "img/termometro.png" <!--poner imagen de depósito lleno-->;
+		document.getElementById("dispensadorHielo").src = "img/old/masdemitadlleno.png";
+		else document.getElementById("dispensadorHielo").src = "img/old/lleno.png";
 		
 	</script>
   </body>
