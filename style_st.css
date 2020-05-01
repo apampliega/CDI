@@ -103,28 +103,28 @@ body {
 
 @media only screen and (max-width:1200px) {
   
-  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton {
+  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton, .boton-primario, .selected {
     width:100%;
   }
 
 @media only screen and (max-width:1024px) {
   
-  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton {
+  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton, .boton-primario, .selected {
     width:100%;
   }
     
 @media only screen and (max-width:768px) {
   
-  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton {
+  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton, .boton-primario, .selected {
     width:100%;
   }
 @media only screen and (max-width:480px) {
   
-  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton{
+  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton, .boton-primario, .selected{
     width:100%;
   }
 @media only screen and (max-width:320px) {
   
-  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton {
+  .rectangle, .rectangle1, .rectangle2, .rectangleVolver, .sombreado, .boton, .boton-primario, .selected {
     width:100%;
   }
