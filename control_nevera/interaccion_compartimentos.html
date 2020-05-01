@@ -17,21 +17,6 @@
     
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../style_st.css">
-    <script type="text/javascript">
-        function encenderFrigo(){
-        document.getElementById("frigoOn").classList.remove('selected');
-        document.getElementById("frigoOff").classList.remove('selected');
-        document.getElementById("frigoOn").classList.add('selected');
-        localStorage.setItem("estadoFrigorifico", "on");
-        }
-        
-        function encenderCong(){
-            document.getElementById("congOn").classList.remove('selected');
-            document.getElementById("congOff").classList.remove('selected');
-            document.getElementById("congOn").classList.add('selected');
-            localStorage.setItem("estadoCongelador", "on");
-        }
-    </script>
 
     <title>Compartimentos</title>
   </head>
@@ -61,43 +46,39 @@
                 <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 pl-5 mx-auto">
                         
                         <div class="row comp1 rectangle">
-                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="frigoOn">
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Cong1Open">
                                 <img src="../img/old/abierto.png" width="100" height="100">
                             </button>
 
-                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary frigoOff" id="frigoOff">
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Cong1Close">
                                 <img src="../img/old/cerrado.png" width="100" height="100">
                             </button>
                         </div>
                                                 
                 </div>
-                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 mx-auto">
+                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 pl-5 mx-auto">
                         
-                        <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 boton">
-                            <div class="font-weight-bold">&nbsp;
-                                <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO<br>
-                            </div>
-                            <div class="pl-3 pt-4 test-align-center pl-3">
-                                <input type="checkbox" name="">
-                            </div>
-                            <div class="pl-3 font-weight-bold">
-                                &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO<br>
-                            </div>
+                        <div class="row comp1 rectangle">
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Cong2Open">
+                                <img src="../img/old/abierto.png" width="100" height="100">
+                            </button>
+
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Cong2Close">
+                                <img src="../img/old/cerrado.png" width="100" height="100">
+                            </button>
                         </div>
                                                 
                 </div>
-                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 mx-auto">
+                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 pl-5 mx-auto">
                         
-                        <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 boton">
-                            <div class="font-weight-bold">&nbsp;
-                                <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO
-                            </div>
-                            <div class="pl-3 pt-4 test-align-center">
-                                <input type="checkbox" name="">
-                            </div>
-                            <div class="pl-3 font-weight-bold">
-                                &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO
-                            </div>
+                        <div class="row comp1 rectangle">
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Cong3Open">
+                                <img src="../img/old/abierto.png" width="100" height="100">
+                            </button>
+
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Cong3Close">
+                                <img src="../img/old/cerrado.png" width="100" height="100">
+                            </button>
                         </div>
                                                 
                 </div>
@@ -113,32 +94,28 @@
 
                         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-6 mx-auto">
                         
-                            <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 boton2">
-                                <div class="font-weight-bold">&nbsp;
-                                    <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO
-                                </div>
-                                <div class="pl-3 pt-4 test-align-center">
-                                    <input type="checkbox" name="">
-                                </div>
-                                <div class="pl-3 font-weight-bold">
-                                    &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br/>&nbsp;APAGADO
-                                </div>
-                            </div>
+                            <div class="row comp1 rectangle">
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Frigo1Open">
+                                <img src="../img/old/abierto.png" width="100" height="100">
+                            </button>
+
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Frigo1Close">
+                                <img src="../img/old/cerrado.png" width="100" height="100">
+                            </button>
+							</div>
                                                 
                         </div>
                     
                         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-6 mx-auto">
-                                <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 boton2">
-                                    <div class="font-weight-bold">&nbsp;
-                                        <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO
-                                    </div>
-                                    <div class="pl-3 pt-4 test-align-center">
-                                        <input type="checkbox" name="">
-                                    </div>
-                                    <div class="pl-3 font-weight-bold">
-                                        &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO
-                                    </div>
-                                </div>
+                            <div class="row comp1 rectangle">
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Frigo2Open">
+                                <img src="../img/old/abierto.png" width="100" height="100">
+                            </button>
+
+                            <button class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 pt-3 mx-auto font-weight-bold rectangle2 border border-secondary" id="Frigo2Close">
+                                <img src="../img/old/cerrado.png" width="100" height="100">
+                            </button>
+							</div>
                                                 
                         </div>
                 </div>
@@ -154,40 +131,140 @@
             </div>
         </div> 
          
-     </div>
-     <script>
-        if(localStorage.estadoFrigorifico){
-            if(localStorage.getItem("estadoFrigorifico") == "on") {
-            document.getElementById("frigoOn").classList.add("selected");
-            document.getElementById("frigoOff").classList.remove("selected");
+    </div>
+    <script>
+        if(localStorage.estadoCong1){
+            if(localStorage.getItem("estadoCong1") == "close") {
+            document.getElementById("Cong1Close").classList.add("selected");
+            document.getElementById("Cong1Open").classList.remove("selected");
             } else{
-            document.getElementById("frigoOff").classList.add("selected");
-            document.getElementById("frigoOn").classList.remove("selected");
+            document.getElementById("Cong1Open").classList.add("selected");
+            document.getElementById("Cong1Close").classList.remove("selected");
             }
         }else{
-            document.getElementById("frigoOn").classList.add("selected")
-            document.getElementById("frigoOff").classList.remove("selected");
-            localStorage.setItem("estadoFrigorifico", "on");
+            document.getElementById("Cong1Close").classList.add("selected")
+            document.getElementById("Cong1Open").classList.remove("selected");
+            localStorage.setItem("estadoCong2", "close");
         }
-        
-        if(localStorage.estadoCongelador){
-            if(localStorage.getItem("estadoCongelador") == "on") {
-            document.getElementById("congOn").classList.add("selected");
-            document.getElementById("congOff").classList.remove("selected");
+		
+        if(localStorage.estadoCong2){
+            if(localStorage.getItem("estadoCong2") == "close") {
+            document.getElementById("Cong2Close").classList.add("selected");
+            document.getElementById("Cong2Open").classList.remove("selected");
             } else{
-            document.getElementById("congOff").classList.add("selected");
-            document.getElementById("congOn").classList.remove("selected");
+            document.getElementById("Cong2Open").classList.add("selected");
+            document.getElementById("Cong2Close").classList.remove("selected");
             }
         }else{
-            document.getElementById("congOn").classList.add("selected");
-            document.getElementById("congOff").classList.remove("selected");
-            localStorage.setItem("estadoCongelador", "on");
+            document.getElementById("Cong2Close").classList.add("selected")
+            document.getElementById("Cong2Open").classList.remove("selected");
+            localStorage.setItem("estadoCong2", "close");
+        }
+		
+		if(localStorage.estadoCong3){
+            if(localStorage.getItem("estadoCong3") == "close") {
+            document.getElementById("Cong3Close").classList.add("selected");
+            document.getElementById("Cong3Open").classList.remove("selected");
+            } else{
+            document.getElementById("Cong3Open").classList.add("selected");
+            document.getElementById("Cong3Close").classList.remove("selected");
+            }
+        }else{
+            document.getElementById("Cong3Close").classList.add("selected")
+            document.getElementById("Cong3Open").classList.remove("selected");
+            localStorage.setItem("estadoCong3", "close");
+        }
+		
+		if(localStorage.estadoFrigo1){
+            if(localStorage.getItem("estadoFrigo1") == "close") {
+            document.getElementById("Frigo1Close").classList.add("selected");
+            document.getElementById("Frigo1Open").classList.remove("selected");
+            } else{
+            document.getElementById("Frigo1Open").classList.add("selected");
+            document.getElementById("Frigo1Close").classList.remove("selected");
+            }
+        }else{
+            document.getElementById("Frigo1Close").classList.add("selected")
+            document.getElementById("Cong3Open").classList.remove("selected");
+            localStorage.setItem("estadoFrigo1", "close");
+        }
+		
+		if(localStorage.estadoFrigo2){
+            if(localStorage.getItem("estadoFrigo2") == "close") {
+            document.getElementById("Frigo2Close").classList.add("selected");
+            document.getElementById("Frigo2Open").classList.remove("selected");
+            } else{
+            document.getElementById("Frigo2Open").classList.add("selected");
+            document.getElementById("Frigo2Close").classList.remove("selected");
+            }
+        }else{
+            document.getElementById("Frigo2Close").classList.add("selected")
+            document.getElementById("Frigo2Open").classList.remove("selected");
+            localStorage.setItem("estadoFrigo2", "close");
         }
         
-        document.getElementById("frigoOn").addEventListener("click",encenderFrigo);
-        document.getElementById("frigoOff").addEventListener("click",apagarFrigo);
-        document.getElementById("congOn").addEventListener("click",encenderCong);
-        document.getElementById("congOff").addEventListener("click",apagarCong);
+        document.getElementById("Cong1Open").addEventListener("click",function(){
+			document.getElementById("Cong1Open").classList.remove('selected');
+			document.getElementById("Cong1Close").classList.remove('selected');
+			document.getElementById("Cong1Open").classList.add('selected');
+			localStorage.setItem("estadoCong1", "open");
+		});
+        document.getElementById("Cong1Close").addEventListener("click",function(){
+			document.getElementById("Cong1Open").classList.remove('selected');
+			document.getElementById("Cong1Close").classList.remove('selected');
+			document.getElementById("Cong1Close").classList.add('selected');
+			localStorage.setItem("estadoCong1", "close");
+		});
+        document.getElementById("Cong2Open").addEventListener("click",function(){
+			document.getElementById("Cong2Open").classList.remove('selected');
+			document.getElementById("Cong2Close").classList.remove('selected');
+			document.getElementById("Cong2Open").classList.add('selected');
+			localStorage.setItem("estadoCong2", "open");
+		});
+        document.getElementById("Cong2Close").addEventListener("click",function(){
+			document.getElementById("Cong2Open").classList.remove('selected');
+			document.getElementById("Cong2Close").classList.remove('selected');
+			document.getElementById("Cong2Close").classList.add('selected');
+			localStorage.setItem("estadoCong2", "close");
+		});
+		document.getElementById("Cong3Open").addEventListener("click",function(){
+			document.getElementById("Cong3Open").classList.remove('selected');
+			document.getElementById("Cong3Close").classList.remove('selected');
+			document.getElementById("Cong3Open").classList.add('selected');
+			localStorage.setItem("estadoCong3", "open");
+		});
+        document.getElementById("Cong3Close").addEventListener("click",function(){
+			document.getElementById("Cong3Open").classList.remove('selected');
+			document.getElementById("Cong3Close").classList.remove('selected');
+			document.getElementById("Cong3Close").classList.add('selected');
+			localStorage.setItem("estadoCong3", "close");
+		});
+		
+		document.getElementById("Frigo1Open").addEventListener("click",function(){
+			document.getElementById("Frigo1Open").classList.remove('selected');
+			document.getElementById("Frigo1Close").classList.remove('selected');
+			document.getElementById("Frigo1Open").classList.add('selected');
+			localStorage.setItem("estadoFrigo1", "open");
+		});
+        document.getElementById("Frigo1Close").addEventListener("click",function(){
+			document.getElementById("Frigo1Open").classList.remove('selected');
+			document.getElementById("Frigo1Close").classList.remove('selected');
+			document.getElementById("Frigo1Close").classList.add('selected');
+			localStorage.setItem("estadoFrigo1", "close");
+		});
+		
+		document.getElementById("Frigo2Open").addEventListener("click",function(){
+			document.getElementById("Frigo2Open").classList.remove('selected');
+			document.getElementById("Frigo2Close").classList.remove('selected');
+			document.getElementById("Frigo2Open").classList.add('selected');
+			localStorage.setItem("estadoFrigo2", "open");
+		});
+        document.getElementById("Frigo2Close").addEventListener("click",function(){
+			document.getElementById("Frigo2Open").classList.remove('selected');
+			document.getElementById("Frigo2Close").classList.remove('selected');
+			document.getElementById("Frigo2Close").classList.add('selected');
+			localStorage.setItem("estadoFrigo2", "close");
+		});
     </script>
 </body>
 </html>
