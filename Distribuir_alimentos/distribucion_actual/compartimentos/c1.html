@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!--Popper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../style_st.css">
+    
+    <title>Distribucion</title>
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase2").show(); //mostramos el dropdown
+          });
+        });
+
+        $(document).ready(function(){
+          $(".lacteos").click(function(){
+            $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase2").show(); //mostramos el dropdown
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".lacteos").show(); //mostramos los lacteos
+          });
+        });
+
+        $(document).ready(function(){
+          $(".carnes").click(function(){
+            $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase2").show(); //mostramos el dropdown
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".carnes").show(); //mostramos las carnes
+          });
+        });
+
+        $(document).ready(function(){
+          $(".hortalizas").click(function(){
+            $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase2").show(); //mostramos el dropdown
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".hortalizas").show(); //mostramos las hortalizas
+          });
+        });
+        $(document).ready(function(){
+          $(".frutas").click(function(){
+            $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase2").show(); //mostramos el dropdown
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".frutas").show(); //mostramos las frutas
+          });
+        });
+        $(document).ready(function(){
+          $(".bebidas").click(function(){
+            $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase2").show(); //mostramos el dropdown
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".bebidas").show(); //mostramos las bebidas
+          });
+        });
+
+
+
+
+
+
+var leche = 0;
+$(function() {
+  $("#leche").click(function() {
+
+    leche++;
+   // $(this).text('' + value);
+    alert(leche);
+  });
+});
+
+
+    function encenderFrigo(){
+        document.getElementById("frigoOn").classList.remove('selected');
+        document.getElementById("frigoOff").classList.remove('selected');
+        document.getElementById("frigoOn").classList.add('selected');
+        localStorage.setItem("estadoFrigorifico", "on");
+    }
+    
+    function encenderCong(){
+        document.getElementById("congOn").classList.remove('selected');
+        document.getElementById("congOff").classList.remove('selected');
+        document.getElementById("congOn").classList.add('selected');
+        localStorage.setItem("estadoCongelador", "on");
+    }
+
+    
+    function apagarFrigo(){
+        if(window.confirm("Estás seguro?")){
+            document.getElementById("frigoOn").classList.remove('selected');
+            document.getElementById("frigoOff").classList.remove('selected');
+            document.getElementById("frigoOff").classList.add('selected');
+            localStorage.setItem("estadoFrigorifico", "off");
+        }
+    }
+    
+    function apagarCong(){
+        if(window.confirm("Estás seguro?")){
+            document.getElementById("congOn").classList.remove('selected');
+            document.getElementById("congOff").classList.remove('selected');
+            document.getElementById("congOff").classList.add('selected');
+            localStorage.setItem("estadoCongelador", "off");
+        }
+    }
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+
+ <body style="background-color: #7F7C93;" class="viewport" >
+     
+
+
+
+  <div class="container-fluid vh-100">
+        <!--botones de seleccion -->
+      <div class="row ">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
+
+                <button class="font-weight-bold rectangle rounded border border-secondary p-3 " onclick="location.href='../../../menu_productos.html'"><img src="../../../img/productos.png"><span style="white-space: nowrap">PRODUCTOS</span></button><span class="font-weight-bold display-4">>></span>
+
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
+            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='../../distribuir_alimentos.html'"><img src="../../../img/distribuir_alimentos.png"><span style="">DISTRIBUIR ALIMENTOS</span></button><span class="font-weight-bold display-4">>></span>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
+            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected" ><img src="../../../img/distribucion_actual.png"><span style="">VER DISTRIBUCION ACTUAL</span></button>
+        </div>
+     </div>
+
+
+
+    <!--compartimentos-->
+
+
+<div class="font-weight-bold" style="color:white;">COMPARTIMENTO CONGELADOR 1</div>
+<!--sI NO HAY NINGUN ALIMENTO-->
+<p><div class="font-weight-bold fase1" style="color:white;">NO SE ENCUENTRA NINGUN ALIMENTO</div></p>
+ <button type="button" class="btn-lg btn-block font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>
+
+<!--si hay alimentos-->
+<table class="table table-hover table-secondary   border border-secondary boton-primario fase1">
+  <thead>
+    <tr>
+      <th scope="col">CANTIDAD</th>
+      <th scope="col">DESCRIPCIÓN</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  
+      <td>1</td>
+      <td>Emperador</td>
+
+    </tr>
+    <tr>
+ 
+      <td>2</td>
+      <td>Leche</td>
+
+    </tr>
+    <tr>
+   
+      <td>3</td>
+      <td>Zanahoria</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal-body row">
+  <div class="col-md-6">
+    <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>
+  </div>
+  <div class="col-md-6">
+    <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%"> EDITAR <img src="../../../img/editar.png"></button>
+  </div>
+</div>
+
+
+
+<!--dropdown-->
+<div class="dropdown fase2" style="display: none;">
+  <button class="btn btn-secondary dropdown-toggle font-weight-bold" style="height: 100px;width: 300px; background: #d3d3d3; color: black" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    SELECCIONA UNA OPCIÓN
+  </button>
+  <div class="dropdown-menu" >
+    <button class="dropdown-item lacteos" type="button">LÁCTEOS</button>
+    <button class="dropdown-item carnes" type="button">CARNES, HUEVOS Y PESCADO</button>
+    <button class="dropdown-item hortalizas" type="button">HORTALIZAS Y VERDURAS</button>
+    <button class="dropdown-item frutas" type="button" >FRUTAS</button>
+    <button class="dropdown-item bebidas" type="button">BEBIDAS</button>
+  </div>
+</div>
+
+
+
+
+<!-- alimentos -------------------------------------------------->
+
+<!--fase 3 lacteos-->
+ <div class="col-12 pt-5 pl-5 fase3 lacteos" style="display: none;">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">LÁCTEOS:&nbsp</span>
+        </div>
+            <div class="row m-4"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario leche" id="leche"><img src="../../../img/lecheentera.jpg" width="100" height="100"><span><br>&nbspLECHE ENTERA</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="funcion2()"><img src="../../../img/yogurbifidus.jpg" width="100" height="100"><span><br>&nbspYOGUR BIFIDUS</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="funcion3()"><img src="../../../img/mantequillatradicional.webp" width="100" height="100"><span><br>&nbspMANTEQUILLA TRADICIONAL</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="funcion4()"><img src="../../../img/QuesoManchegoanejo.jpg" width="100" height="100"><span><br>&nbspQUESO MANCHEGO</span></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+<!--fase 3 carnes-->
+ <div class="col-12 pt-5 pl-5 fase3 carnes" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">CARNES, HUEVOS Y PESCADO:&nbsp</span>
+            </div>
+            <div class="row m-4"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/huevosXL.jpg" width="100" height="100"><span><br>&nbspHUEVOS</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/polloasado.jpg" width="100" height="100"><span><br>&nbspPOLLO ASADO</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/hamburguesa.jpeg" width="100" height="100"><span><br>&nbspHAMBURGUESA</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/salmon.jpg" width="100" height="100"><span><br>&nbspSALMON</span></button>
+                </div>
+
+            </div>
+            
+        </div>        
+
+
+<!--fase 3 hortalizas-->
+ <div class="col-12 pt-5 pl-5 fase3 hortalizas" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">HORTALIZAS Y VERDURAS:&nbsp</span>
+            </div>
+            <div class="row m-4"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/zanahoria.jpg" width="100" height="100"><span><br>&nbspZANAHORIA</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/pepino.jpg" width="100" height="100"><span><br>&nbspPEPINO</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/calabacin.jpg" width="100" height="100"><span><br>&nbspCALABACIN</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/ensaladabrotes.jpg" width="100" height="100"><span><br>&nbspENSALADA DE BROTES</span></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+<!--fase 3 bebidas-->
+ <div class="col-12 pt-5 pl-5 fase3 bebidas" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">BEBIDAS:&nbsp</span>
+            </div>
+            <div class="row m-5"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/tinto.jpg" width="100" height="100"><span><br>&nbspVINO TINTO</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/rosado.jpg" width="100" height="100"><span><br>&nbspVINO ROSADO</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/blanco.jpg" width="100" height="100"><span><br>&nbspVINO BLANCO</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/cocacola.jpg" width="100" height="100"><span><br>COCA-COLA</span></button>
+                </div>
+
+            </div>
+            
+        </div>
+<!--fase 3 frutas-->
+ <div class="col-12 pt-5 pl-5 fase3 frutas" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5">
+                <span class="font-weight-bold">FRUTAS:&nbsp</span>
+            </div>
+            <div class="row m-4"> 
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/manzana.jpg" width="100" height="100"><span><br>&nbspMANZANA</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/arandanos.jpg" width="100" height="100"><span><br>&nbspARANDANOS</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/uvas.jpg" width="100" height="100"><span><br>&nbspUVAS</span></button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Introducir_alimentos.html'"><img src="../../../img/cerezas.jpg" width="100" height="100"><span><br>&nbspCEREZAS</span></button>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="row  float-left mt-5"> <!--fixed-bottom-->
+            <div class="pt-3 pl-5 ">
+            
+                    <button class="font-weight-bold rectangleVolver rounded border border-secondary sombreado" onclick="location.href='../distribuir_alimentos.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+                
+            </div>
+        </div> 
+
+
+ </div>
+
+  </body>
+</html>
