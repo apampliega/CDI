@@ -54,15 +54,15 @@
             </div>
             <div class="m-4"> <!--pt:padding top-->
                <form>
-                   <div id="txt1"></div>
+                   <span>FECHA DE COMPRA: <output type="date" id="compra_leche" name="fecha_compra_leche" size="10"></span>
                    <br>
-                   <span>FECHA DE ENVASADO: <output type="date" id="fecha_envasado_leche" name="fecha_envasado_leche" size="10"></span>
+                   <span>FECHA DE ENVASADO: <output type="date" id="envasado_leche" name="fecha_envasado_leche" size="10"></span>
                    <br>
-                   <span>FECHA DE CADUCIDAD: <output type="date" id="fecha_caducidad_leche" name="fecha_caducidad_leche" size="10"></span>
+                   <span>FECHA DE CADUCIDAD: <output type="date" id="caducidad_leche" name="fecha_caducidad_leche" size="10"></span>
                    <br>
-                   <span>DIAS EN LA NEVERA/CONGELADOR: <output type="number" min="0" max="100" id="dias_dentro_leche" name="dias_dentro_leche" size="2"></span>
+                   <span>DIAS EN LA NEVERA/CONGELADOR: <output type="number" min="0" max="100" id="dias_leche" name="dias_dentro_leche" size="2"></span>
                    <br>
-                   <span>CANTIDAD: <output type="number" min="0" max="100" id="cantidad_leche" name="cantidad_leche" size="2"></span>
+                   <span>CANTIDAD: <output type="number" min="0" max="100" id="cant_leche" name="cant_leche" size="2"></span>
                    <br>
                </form>
             </div>
@@ -82,6 +82,15 @@
 	
 </body>
   <script>
-    document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
+    if(localStorage.getItem("fecha_compra_leche"))
+      document.getElementById("compra_leche").value =localStorage.getItem("fecha_compra_leche");
+    if(localStorage.getItem("fecha_envasado_leche"))
+      document.getElementById("envasado_leche").value =localStorage.getItem("fecha_envasado_leche");
+    if(localStorage.getItem("fecha_caducidad_leche"))
+      document.getElementById("caducidad_leche").value =localStorage.getItem("fecha_caducidad_leche");
+    if(localStorage.getItem("dias_dentro_leche"))
+      document.getElementById("dias_leche").value =localStorage.getItem("dias_dentro_leche");
+    if(localStorage.getItem("cantidad_leche"))
+      document.getElementById("cant_leche").value =localStorage.getItem("cantidad_leche");
   </script>
 </html>

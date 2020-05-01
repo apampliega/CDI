@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!--Popper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    
+    <!-- CSS -->
+    		<link rel="stylesheet" type="text/css" href="style_st.css">
+    
+
+    <title>Compartimentos</title>
+    <script>
+    function encenderFrigo(){
+        document.getElementById("frigoOn").classList.remove('selected');
+        document.getElementById("frigoOff").classList.remove('selected');
+        document.getElementById("frigoOn").classList.add('selected');
+        localStorage.setItem("estadoFrigorifico", "on");
+    }
+    
+    function encenderCong(){
+        document.getElementById("congOn").classList.remove('selected');
+        document.getElementById("congOff").classList.remove('selected');
+        document.getElementById("congOn").classList.add('selected');
+        localStorage.setItem("estadoCongelador", "on");
+    }
+
+    
+    function apagarFrigo(){
+        if(window.confirm("Estás seguro?")){
+            document.getElementById("frigoOn").classList.remove('selected');
+            document.getElementById("frigoOff").classList.remove('selected');
+            document.getElementById("frigoOff").classList.add('selected');
+            localStorage.setItem("estadoFrigorifico", "off");
+        }
+    }
+    
+    function apagarCong(){
+        if(window.confirm("Estás seguro?")){
+            document.getElementById("congOn").classList.remove('selected');
+            document.getElementById("congOff").classList.remove('selected');
+            document.getElementById("congOff").classList.add('selected');
+            localStorage.setItem("estadoCongelador", "off");
+        }
+    }
+    </script>
+  </head>
+<body
+    style="background-color: #7F7C93;"
+    class="viewport" >
+
+    <div class="container-fluid vh-100">
+     
+        <div class="row">
+    
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3"> <!--pt:padding top-->
+        	<button class="font-weight-bold rectangle rounded border border-secondary  p-3" onclick="location.href='Control_nevera.html'"><img src="img/nevera.png"><span><br>CONTROL DE NEVERA</span></button>
+            </div>
+            
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 pt-5"> 
+            <span class="font-weight-bold display-4">>></span>
+            </div>
+            
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
+                <button class="font-weight-bold rectangle rounded border border-secondary p-3 selected" onclick="location.href='Abrir_cerrar_compartimentos.html'"><img src="img/nevera.png"><span><br>ABRIR/CERRAR COMPARTIMENTOS</span></button>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 pt-3 pl-1 mx-auto">
+                <p class="font-weight-bold p">COMPARTIMENTOS DEL CONGELADOR:</p>
+                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 mx-auto">
+                        
+                        <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 boton">
+                            <div class="font-weight-bold">&nbsp;
+                                <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO<br>
+                            </div>
+                            <div class="pl-3 pt-4 test-align-center pl-3">
+                                <input type="checkbox" name="">
+                            </div>
+                            <div class="pl-3 font-weight-bold">
+                                &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO<br>
+                            </div>
+                        </div>
+                                                
+                </div>
+                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 mx-auto">
+                        
+                        <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 boton">
+                            <div class="font-weight-bold">&nbsp;
+                                <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO<br>
+                            </div>
+                            <div class="pl-3 pt-4 test-align-center pl-3">
+                                <input type="checkbox" name="">
+                            </div>
+                            <div class="pl-3 font-weight-bold">
+                                &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO<br>
+                            </div>
+                        </div>
+                                                
+                </div>
+                <div class="col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-3 mx-auto">
+                        
+                        <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 boton">
+                            <div class="font-weight-bold">&nbsp;
+                                <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO
+                            </div>
+                            <div class="pl-3 pt-4 test-align-center">
+                                <input type="checkbox" name="">
+                            </div>
+                            <div class="pl-3 font-weight-bold">
+                                &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO
+                            </div>
+                        </div>
+                                                
+                </div>
+                
+                
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 pt-3 pl-1 mx-auto ">
+                <p class="font-weight-bold p">COMPARTIMENTOS DEL FRIGORÍFICO:</p>
+                <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-5 pl-5 boton content="" "><div class="font-weight-bold content="" pt-3"></div><br><br><br></div><br>
+                <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-5 pl-5 boton content="" "><div class="font-weight-bold content="" pt-3"></div><br><br><br></div><br>
+                <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-11 col-xl-11 pt-5 pl-5 boton content="" "><div class="font-weight-bold content="" pt-3"></div><br><br><br></div><br>
+                <div class="row justify-content-center">
+
+                        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-6 mx-auto">
+                        
+                            <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 boton2">
+                                <div class="font-weight-bold">&nbsp;
+                                    <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO
+                                </div>
+                                <div class="pl-3 pt-4 test-align-center">
+                                    <input type="checkbox" name="">
+                                </div>
+                                <div class="pl-3 font-weight-bold">
+                                    &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br/>&nbsp;APAGADO
+                                </div>
+                            </div>
+                                                
+                        </div>
+                    
+                        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-6 mx-auto">
+                                <div class="row justify-content-center col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 boton2">
+                                    <div class="font-weight-bold">&nbsp;
+                                        <img src="https://api-lunacy.icons8.com/api/assets/ed6b6556-c1bf-4e08-8689-ded4b0e6b5f9/Power-Off-Button-icon-2.png"><br>ENCENDIDO
+                                    </div>
+                                    <div class="pl-3 pt-4 test-align-center">
+                                        <input type="checkbox" name="">
+                                    </div>
+                                    <div class="pl-3 font-weight-bold">
+                                        &nbsp;<img src="https://api-lunacy.icons8.com/api/assets/179b7a76-8d3c-4419-8f6f-f698155f9a5a/Power-Off-Button-icon-2.png"><br>&nbsp;APAGADO
+                                    </div>
+                                </div>
+                                                
+                        </div>
+                </div>
+                                            
+            </div>
+                                   
+        </div>
+        <div class="row  float-left mt-5"> <!--fixed-bottom-->
+            <div class="pt-3 pl-5 ">
+            
+                    <button class="font-weight rectangleVolver rounded border border-secondary sombreado" onclick="location.href='control_nevera.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+                
+            </div>
+        </div> 
+         
+     </div>
+</body>

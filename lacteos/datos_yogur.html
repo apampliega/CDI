@@ -89,6 +89,12 @@
 
 	</div> 
     <script type="text/javascript">
+        var fecha_compra_yogur;
+        var fecha_envasado_yogur;
+        var fecha_caducidad_yogur;
+        var dias_dentro_yogur;
+        var cantidad_yogur;
+
         function cancelar(){
             fecha_compra.value="";
             fecha_envasado.value="";
@@ -98,23 +104,13 @@
         }
         function guardar(){
             if(window.confirm("¿Estás seguro?")){
-        
-                if(temp_nevera.value < 10 && temp_nevera.value > 0)
-                    localStorage.setItem("tempFrigo",temp_nevera.value);
-                    document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
-
-                if(temp_congelador.value < -14 && temp_congelador.value > -33)
-                    localStorage.setItem("tempCong",temp_congelador.value);
-                    document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
+                localStorage.setItem("fecha_compra_yogur",fecha_compra.value);
+                localStorage.setItem("fecha_envasado_yogur",fecha_envasado.value);
+                localStorage.setItem("fecha_caducidad_yogur",fecha_caducidad.value);
+                localStorage.setItem("dias_dentro_yogur",dias_dentro.value);
+                localStorage.setItem("cantidad_yogur",cantidad.value);
             }
         }
-        if(localStorage.tempFrigo);
-        else localStorage.setItem("tempFrigo",5);
-        document.getElementById("txt1").innerHTML = "TEMPERATURA FRIGORÍFICO: " + localStorage.getItem("tempFrigo") + "º";
-        
-        if(localStorage.tempCong);
-        else localStorage.setItem("tempCong",-15);
-        document.getElementById("txt2").innerHTML = "TEMPERATURA CONGELADOR: " + localStorage.getItem("tempCong") + "º";
     </script>
 </body>
 </html>

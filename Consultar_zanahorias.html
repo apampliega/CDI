@@ -14,16 +14,14 @@
     <!-- JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" media="only screen and (max-width: 1068px)" href="estilos.css">
     <!-- CSS -->
-    		<link rel="stylesheet" type="text/css" href="style_st.css">
+    <link rel="stylesheet" type="text/css" href="style_st.css">
 
 
-    <title>Datos pepinos</title>
+    <title>Consultar zanahorias</title>
     
   </head>
-
+  
 
   <body 
    style="background-color: #7F7C93;"
@@ -56,28 +54,20 @@
             </div>
             <div class="m-4"> <!--pt:padding top-->
                <form>
-                   <span>FECHA DE COMPRA: <input type="date" id="fecha_compra" name="fecha_compra" size="10"></span>
+                   <span>FECHA DE COMPRA: <output type="date" id="compra_zanahorias" name="fecha_compra_zanahorias" size="10"></span>
                    <br>
-                   <span>FECHA DE ENVASADO: <input type="date" id="fecha_envasado" name="fecha_envasado" size="10"></span>
+                   <span>FECHA DE ENVASADO: <output type="date" id="envasado_zanahorias" name="fecha_envasado_zanahorias" size="10"></span>
                    <br>
-                   <span>FECHA DE CADUCIDAD: <input type="date" id="fecha_caducidad" name="fecha_caducidad" size="10"></span>
+                   <span>FECHA DE CADUCIDAD: <output type="date" id="caducidad_zanahorias" name="fecha_caducidad_zanahorias" size="10"></span>
                    <br>
-                   <span>DIAS EN LA NEVERA/CONGELADOR: <input type="number" min="0" max="100" id="dias_dentro" name="dias_dentro" size="2"></span>
+                   <span>DIAS EN LA NEVERA/CONGELADOR: <output type="number" min="0" max="100" id="dias_zanahorias" name="dias_dentro_zanahorias" size="2"></span>
                    <br>
-                   <span>CANTIDAD: <input type="number" min="0" max="100" id="cantidad" name="cantidad" size="2" value=2></span>
+                   <span>CANTIDAD: <output type="number" min="0" max="100" id="cant_zanahorias" name="cant_zanahorias" size="2"></span>
                    <br>
                </form>
             </div>
+		</div>
         <div>
-        <div class="row h-50">
-            <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
-                <button class="rectangleVolver rounded border" value="Cancelar" onclick="cancelar()">Cancelar</button>
-            </div>
-            <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
-                <button class="rectangleVolver rounded border" value="Confirmar" onclick="guardar()">Confirmar</button>
-            </div>
-            
-        </div>
     
         <div class="row  float-left mt-5"> <!--fixed-bottom-->
                 <div class="pt-3 pl-5 ">
@@ -87,30 +77,20 @@
                 </div>
         </div> 
 
-	</div> 
-    <script type="text/javascript">
-        var fecha_compra_pepinos;
-        var fecha_envasado_pepinos;
-        var fecha_caducidad_pepinos;
-        var dias_dentro_pepinos;
-        var cantidad_pepinos;
-
-        function cancelar(){
-            fecha_compra.value="";
-            fecha_envasado.value="";
-            fecha_caducidad.value="";
-            dias_dentro.value="";
-            cantidad.value="";
-        }
-        function guardar(){
-            if(window.confirm("¿Estás seguro?")){
-                localStorage.setItem("fecha_compra_pepinos",fecha_compra.value);
-                localStorage.setItem("fecha_envasado_pepinos",fecha_envasado.value);
-                localStorage.setItem("fecha_caducidad_pepinos",fecha_caducidad.value);
-                localStorage.setItem("dias_dentro_pepinos",dias_dentro.value);
-                localStorage.setItem("cantidad_pepinos",cantidad.value);
-            }
-        }
-    </script>
+		</div> 
+	</div>
+	
 </body>
+  <script>
+    if(localStorage.getItem("fecha_compra_zanahorias"))
+      document.getElementById("compra_zanahorias").value =localStorage.getItem("fecha_compra_zanahorias");
+    if(localStorage.getItem("fecha_envasado_zanahorias"))
+      document.getElementById("envasado_zanahorias").value =localStorage.getItem("fecha_envasado_zanahorias");
+    if(localStorage.getItem("fecha_caducidad_zanahorias"))
+      document.getElementById("caducidad_zanahorias").value =localStorage.getItem("fecha_caducidad_zanahorias");
+    if(localStorage.getItem("dias_dentro_zanahorias"))
+      document.getElementById("dias_zanahorias").value =localStorage.getItem("dias_dentro_zanahorias");
+    if(localStorage.getItem("cantidad_zanahorias"))
+      document.getElementById("cant_zanahorias").value =localStorage.getItem("cantidad_zanahorias");
+  </script>
 </html>
