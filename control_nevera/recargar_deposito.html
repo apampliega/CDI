@@ -16,7 +16,7 @@
 
 
     <!-- CSS -->
-    	<link rel="stylesheet" type="text/css" href="style_st.css">
+    	<link rel="stylesheet" type="text/css" href="../style_st.css">
 		
     <title>Recargar Depósito</title>
 	
@@ -25,12 +25,12 @@
 	function recargarDeposito(){
 		localStorage.setItem("deposito",100);
 		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
-		document.getElementById("depositoBebida").src = "img/old/lleno.png" 
+		document.getElementById("depositoBebida").src = "../img/old/lleno.png" 
 	}
 	function recargarHielo(){
 		localStorage.setItem("hielo",100);
 		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
-		document.getElementById("depositoHielo").src = "img/old/lleno.png";
+		document.getElementById("depositoHielo").src = "../img/old/lleno.png";
 	}
 	
 	
@@ -109,7 +109,7 @@
     	<!--botones de seleccion -->
 		<div class="row ">
 			<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
-				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='Control_nevera.html'"><img src="img/nevera.png"><span><br>CONTROL DE NEVERA</span></button>
+				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../img/nevera.png"><span><br>CONTROL DE NEVERA</span></button>
             </div>
             
             <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 pt-5"> 
@@ -117,58 +117,61 @@
             </div>
 			
 			<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5">
-				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected" onclick="location.href='recargar_deposito.html'"><img src="img/old/9c179403771e1888e083880f3e06ca5121f059c9.png" width="50" height="100"><span><br>RECARGAR DEPÓSITO</span></button>
+				<button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected"><img src="../img/old/9c179403771e1888e083880f3e06ca5121f059c9.png" width="50" height="100"><span><br>RECARGAR DEPÓSITO</span></button>
 			</div>
 
 		</div>
 
 		<!-- info depósitos -->
-		<div class="row h-50">
+		<div class="row h-50 pt-5">
 	        <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
 	        	<img id="depositoBebida">
-				<div id="txt1"></div>
-	        </div>
-			
-	        <div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center">
-	        	<img id ="depositoHielo">
-				<div id="txt2"></div>
+				<div id="txt1"><br></div>
 	        </div>
 		
-			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto "> 
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto pt-5"> 
 				<div class="font-weight-bold" style="color:white;">
 					Estado depósito bebida:
 				</div>
                 <div class="estado_frigorifico">
                     <!-- añadair clase selected al boton al pulsar-->
                     <button class="font-weight-bold rectangle rounded border border-secondary bebClose selected" id="bebClose">
-                        <img src="img/old/cerradodepositobebida.png" width="75" height="75"><P><span style="white-space: nowrap">CERRADO</span></P>
+                        <img src="../img/old/cerradodepositobebida.png" width="75" height="75"><span style="white-space: nowrap">CERRADO</span>
                     </button>
 
                     <button class="font-weight-bold rectangle rounded border border-secondary bebOpen" id="bebOpen">
-                        <img src="img/old/abiertodepositobebida.png" width="75" height="75"><p><span style="white-space: nowrap">ABIERTO</span></p>
+                        <img src="../img/old/abiertodepositobebida.png" width="75" height="75"><span style="white-space: nowrap">ABIERTO</span>
                     </button>
                 </div>
 			</div>
-			
-			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto "> 
+			<div class=" col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 font-weight-bold d-flex justify-content-center align-items-center pt-5">
+	        	<img id ="depositoHielo">
+				<div id="txt2"></div>
+	        </div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto pt-5"> 
 				<div class="font-weight-bold" style="color:white;">
 					Estado depósito hielo:
 				</div>
                 <div class="estado_congelador">
                     <button class="font-weight-bold rectangle rounded border border-secondary hieloClose selected" id="hieloClose">
-                        <img src="img/old/cerradodepositohielo.png" width="75" height="75"><P><span style="white-space: nowrap">CERRADO</span></P>
+                        <img src="../img/old/cerradodepositohielo.png" width="75" height="75"><span style="white-space: nowrap">CERRADO</span>
                     </button>
 
                     <button class="font-weight-bold rectangle rounded border border-secondary hieloOpen" id="hieloOpen">
-                        <img src="img/old/abiertodepositohielo.png" width="75" height="75"><p><span style="white-space: nowrap">ABIERTO</span></p>
+                        <img src="../img/old/abiertodepositohielo.png" width="75" height="75"><span style="white-space: nowrap">ABIERTO</span>
                     </button>
                 </div>
 			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mx-auto pt-5"></div>
 		</div>
 		
-		<div class="row  float-left mt-5 pt-3 pl-5"> <!--fixed-bottom-->
-			<button class="font-weight rectangleVolver rounded border border-secondary sombreado" onclick="location.href='Control_nevera.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
-		</div>
+		<div class="row  float-left mt-5 fixed-bottom"> <!--fixed-bottom-->
+            <div class="pt-3 pl-5 ">
+
+                    <button class="font-weight-bold rectangleVolver rounded border border-secondary sombreado" onclick="location.href='../control_nevera.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+
+            </div>
+        </div>
 
  
 	</div>
@@ -178,28 +181,28 @@
 		document.getElementById("txt1").innerHTML = "Nivel depósito bebida: " + localStorage.getItem("deposito") + "%";
 		
 		if (localStorage.deposito < 12.5)
-		document.getElementById("depositoBebida").src = "img/old/vacio.png" <!--poner imagen de depósito vacío-->;
+		document.getElementById("depositoBebida").src = "../img/old/vacio.png" <!--poner imagen de depósito vacío-->;
 		else if(localStorage.deposito < 37.5)
-		document.getElementById("depositoBebida").src = "img/old/menosdemitadlleno.png" <!--poner imagen de depósito al 25%-->;
+		document.getElementById("depositoBebida").src = "../img/old/menosdemitadlleno.png" <!--poner imagen de depósito al 25%-->;
 		else if(localStorage.deposito < 62.5)
-		document.getElementById("depositoBebida").src = "img/old/mitadlleno.png" <!--poner imagen de depósito al 50%-->;
+		document.getElementById("depositoBebida").src = "../img/old/mitadlleno.png" <!--poner imagen de depósito al 50%-->;
 		else if(localStorage.deposito < 87.5)
-		document.getElementById("depositoBebida").src = "img/old/masdemitadlleno.png" <!--poner imagen de depósito 75%-->;
-		else document.getElementById("depositoBebida").src = "img/old/lleno.png" <!--poner imagen de depósito lleno-->;
+		document.getElementById("depositoBebida").src = "../img/old/masdemitadlleno.png" <!--poner imagen de depósito 75%-->;
+		else document.getElementById("depositoBebida").src = "../img/old/lleno.png" <!--poner imagen de depósito lleno-->;
 		
 		if(localStorage.hielo);
 		else localStorage.setItem("hielo",50);
 		document.getElementById("txt2").innerHTML = "Nivel depósito hielo: " + localStorage.getItem("hielo") + "%";
 		
 		if (localStorage.hielo < 12.5)
-		document.getElementById("depositoHielo").src = "img/old/vacio.png" <!--poner imagen de depósito vacío-->;
+		document.getElementById("depositoHielo").src = "../img/old/vacio.png" <!--poner imagen de depósito vacío-->;
 		else if(localStorage.hielo < 37.5)
-		document.getElementById("depositoHielo").src = "img/old/menosdemitadlleno.png" <!--poner imagen de depósito al 25%-->;
+		document.getElementById("depositoHielo").src = "../img/old/menosdemitadlleno.png" <!--poner imagen de depósito al 25%-->;
 		else if(localStorage.hielo < 62.5)
-		document.getElementById("depositoHielo").src = "img/old/mitadlleno.png" <!--poner imagen de depósito al 50%-->;
+		document.getElementById("depositoHielo").src = "../img/old/mitadlleno.png" <!--poner imagen de depósito al 50%-->;
 		else if(localStorage.hielo < 87.5)
-		document.getElementById("depositoHielo").src = "img/old/masdemitadlleno.png" <!--poner imagen de depósito 75%-->;
-		else document.getElementById("depositoHielo").src = "img/old/lleno.png" <!--poner imagen de depósito lleno-->;
+		document.getElementById("depositoHielo").src = "../img/old/masdemitadlleno.png" <!--poner imagen de depósito 75%-->;
+		else document.getElementById("depositoHielo").src = "../img/old/lleno.png" <!--poner imagen de depósito lleno-->;
 	</script>
   </body>
 </html>
