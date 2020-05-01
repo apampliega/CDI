@@ -74,89 +74,89 @@
 
 
 /*------------------------------LOGICA LECHE------------------------------------*/
-var p2_var_leche= localStorage.getItem("p2_var_leche");
+var f5_var_leche= localStorage.getItem("f5_var_leche");
 $(function() {
   $("#sumarLeche").click(function() {
 
-    p2_var_leche++;
-    localStorage.setItem("p2_var_leche", p2_var_leche);
-   $('#p2_var_leche').empty().append(p2_var_leche);
-   if (p2_var_leche==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="p2_var_leche">'+p2_var_leche+'</td><td>leche </td></tr>');
+    f5_var_leche++;
+    localStorage.setItem("f5_var_leche", f5_var_leche);
+   $('#f5_var_leche').empty().append(f5_var_leche);
+   if (f5_var_leche==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="f5_var_leche">'+f5_var_leche+'</td><td>leche </td></tr>');
    }
-   if (p2_var_leche!=0) {
+   if (f5_var_leche!=0) {
    
-   $('#p2_var_leche').empty().append(p2_var_leche);
+   $('#f5_var_leche').empty().append(f5_var_leche);
    }
-   if (p2_var_leche==0) {
+   if (f5_var_leche==0) {
     $('#fila_leche').empty();
    }
 
   });
 
 $("#restarLeche").click(function() {
-   if (p2_var_leche!=0) {
-   p2_var_leche--;
-   $('#p2_var_leche').empty().append(p2_var_leche);
+   if (f5_var_leche!=0) {
+   f5_var_leche--;
+   $('#f5_var_leche').empty().append(f5_var_leche);
 
    }
-   if (p2_var_leche==0) {
+   if (f5_var_leche==0) {
      $('#fila_leche').remove();
    }
      
-    $('#p2_var_leche').empty().append(p2_var_leche);
-    localStorage.setItem("p2_var_leche", p2_var_leche);
+    $('#f5_var_leche').empty().append(f5_var_leche);
+    localStorage.setItem("f5_var_leche", f5_var_leche);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_leche")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="p2_var_leche">'+localStorage.getItem("p2_var_leche")+'</td><td>leche </td></tr>');
+if (localStorage.getItem("f5_var_leche")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="f5_var_leche">'+localStorage.getItem("f5_var_leche")+'</td><td>leche </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA YOUGUR------------------------------------*/
-var p2_var_yogur= localStorage.getItem("p2_var_yogur");
+var f5_var_yogur= localStorage.getItem("f5_var_yogur");
 $(function() {
   $("#sumaryogur").click(function() {
 
-    p2_var_yogur++;
-    localStorage.setItem("p2_var_yogur", p2_var_yogur);
-   $('#p2_var_yogur').empty().append(p2_var_yogur);
-   if (p2_var_yogur==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_yogur"><td id="p2_var_yogur">'+p2_var_yogur+'</td><td>yogur </td></tr>');
+    f5_var_yogur++;
+    localStorage.setItem("f5_var_yogur", f5_var_yogur);
+   $('#f5_var_yogur').empty().append(f5_var_yogur);
+   if (f5_var_yogur==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_yogur"><td id="f5_var_yogur">'+f5_var_yogur+'</td><td>yogur </td></tr>');
    }
-   if (p2_var_yogur!=0) {
+   if (f5_var_yogur!=0) {
    
-   $('#p2_var_yogur').empty().append(p2_var_yogur);
+   $('#f5_var_yogur').empty().append(f5_var_yogur);
    }
-   if (p2_var_yogur==0) {
+   if (f5_var_yogur==0) {
     $('#fila_yogur').empty();
    }
 
   });
 
 $("#restaryogur").click(function() {
-   if (p2_var_yogur!=0) {
-   p2_var_yogur--;
-   $('#p2_var_yogur').empty().append(p2_var_yogur);
+   if (f5_var_yogur!=0) {
+   f5_var_yogur--;
+   $('#f5_var_yogur').empty().append(f5_var_yogur);
 
    }
-   if (p2_var_yogur==0) {
+   if (f5_var_yogur==0) {
      $('#fila_yogur').remove();
    }
      
-    $('#p2_var_yogur').empty().append(p2_var_yogur);
-    localStorage.setItem("p2_var_yogur", p2_var_yogur);
+    $('#f5_var_yogur').empty().append(f5_var_yogur);
+    localStorage.setItem("f5_var_yogur", f5_var_yogur);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_yogur")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_yogur"><td id="p2_var_yogur">'+localStorage.getItem("p2_var_yogur")+'</td><td>yogur </td></tr>');
+if (localStorage.getItem("f5_var_yogur")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_yogur"><td id="f5_var_yogur">'+localStorage.getItem("f5_var_yogur")+'</td><td>yogur </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
@@ -164,90 +164,90 @@ if (localStorage.getItem("p2_var_yogur")>=1) {
 
 
 /*------------------------------LOGICA mantqulla------------------------------------*/
-var p2_var_mantequilla= localStorage.getItem("p2_var_mantequilla");
+var f5_var_mantequilla= localStorage.getItem("f5_var_mantequilla");
 $(function() {
   $("#sumarmantequilla").click(function() {
 
-    p2_var_mantequilla++;
-    localStorage.setItem("p2_var_mantequilla", p2_var_mantequilla);
-   $('#p2_var_mantequilla').empty().append(p2_var_mantequilla);
-   if (p2_var_mantequilla==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_mantequilla"><td id="p2_var_mantequilla">'+p2_var_mantequilla+'</td><td>mantequilla </td></tr>');
+    f5_var_mantequilla++;
+    localStorage.setItem("f5_var_mantequilla", f5_var_mantequilla);
+   $('#f5_var_mantequilla').empty().append(f5_var_mantequilla);
+   if (f5_var_mantequilla==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_mantequilla"><td id="f5_var_mantequilla">'+f5_var_mantequilla+'</td><td>mantequilla </td></tr>');
    }
-   if (p2_var_mantequilla!=0) {
+   if (f5_var_mantequilla!=0) {
    
-   $('#p2_var_mantequilla').empty().append(p2_var_mantequilla);
+   $('#f5_var_mantequilla').empty().append(f5_var_mantequilla);
    }
-   if (p2_var_mantequilla==0) {
+   if (f5_var_mantequilla==0) {
     $('#fila_mantequilla').empty();
    }
 
   });
 
 $("#restarmantequilla").click(function() {
-   if (p2_var_mantequilla!=0) {
-   p2_var_mantequilla--;
-   $('#p2_var_mantequilla').empty().append(p2_var_mantequilla);
+   if (f5_var_mantequilla!=0) {
+   f5_var_mantequilla--;
+   $('#f5_var_mantequilla').empty().append(f5_var_mantequilla);
 
    }
-   if (p2_var_mantequilla==0) {
+   if (f5_var_mantequilla==0) {
      $('#fila_mantequilla').remove();
    }
      
-    $('#p2_var_mantequilla').empty().append(p2_var_mantequilla);
-    localStorage.setItem("p2_var_mantequilla", p2_var_mantequilla);
+    $('#f5_var_mantequilla').empty().append(f5_var_mantequilla);
+    localStorage.setItem("f5_var_mantequilla", f5_var_mantequilla);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_mantequilla")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_mantequilla"><td id="p2_var_mantequilla">'+localStorage.getItem("p2_var_mantequilla")+'</td><td>mantequilla </td></tr>');
+if (localStorage.getItem("f5_var_mantequilla")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_mantequilla"><td id="f5_var_mantequilla">'+localStorage.getItem("f5_var_mantequilla")+'</td><td>mantequilla </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 
 /*------------------------------LOGICA queso------------------------------------*/
-var p2_var_queso= localStorage.getItem("p2_var_queso");
+var f5_var_queso= localStorage.getItem("f5_var_queso");
 $(function() {
   $("#sumarqueso").click(function() {
 
-    p2_var_queso++;
-    localStorage.setItem("p2_var_queso", p2_var_queso);
-   $('#p2_var_queso').empty().append(p2_var_queso);
-   if (p2_var_queso==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_queso"><td id="p2_var_queso">'+p2_var_queso+'</td><td>queso </td></tr>');
+    f5_var_queso++;
+    localStorage.setItem("f5_var_queso", f5_var_queso);
+   $('#f5_var_queso').empty().append(f5_var_queso);
+   if (f5_var_queso==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_queso"><td id="f5_var_queso">'+f5_var_queso+'</td><td>queso </td></tr>');
    }
-   if (p2_var_queso!=0) {
+   if (f5_var_queso!=0) {
    
-   $('#p2_var_queso').empty().append(p2_var_queso);
+   $('#f5_var_queso').empty().append(f5_var_queso);
    }
 
   });
 
 $("#restarqueso").click(function() {
-   if (p2_var_queso!=0) {
-   p2_var_queso--;
-   $('#p2_var_queso').empty().append(p2_var_queso);
+   if (f5_var_queso!=0) {
+   f5_var_queso--;
+   $('#f5_var_queso').empty().append(f5_var_queso);
 
    }
-   if (p2_var_queso==0) {
+   if (f5_var_queso==0) {
      //$('#fila_queso').empty();
      $("#fila_queso").remove();
 
 
    }
      
-    $('#p2_var_queso').empty().append(p2_var_queso);
-    localStorage.setItem("p2_var_queso", p2_var_queso);
+    $('#f5_var_queso').empty().append(f5_var_queso);
+    localStorage.setItem("f5_var_queso", f5_var_queso);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_queso")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_queso"><td id="p2_var_queso">'+localStorage.getItem("p2_var_queso")+'</td><td>queso </td></tr>');
+if (localStorage.getItem("f5_var_queso")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_queso"><td id="f5_var_queso">'+localStorage.getItem("f5_var_queso")+'</td><td>queso </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
@@ -255,700 +255,700 @@ if (localStorage.getItem("p2_var_queso")>=1) {
 
 
 /*------------------------------LOGICA huevos------------------------------------*/
-var p2_var_huevos= localStorage.getItem("p2_var_huevos");
+var f5_var_huevos= localStorage.getItem("f5_var_huevos");
 $(function() {
   $("#sumarhuevos").click(function() {
 
-    p2_var_huevos++;
-    localStorage.setItem("p2_var_huevos", p2_var_huevos);
-   $('#p2_var_huevos').empty().append(p2_var_huevos);
-   if (p2_var_huevos==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_huevos"><td id="p2_var_huevos">'+p2_var_huevos+'</td><td>huevos </td></tr>');
+    f5_var_huevos++;
+    localStorage.setItem("f5_var_huevos", f5_var_huevos);
+   $('#f5_var_huevos').empty().append(f5_var_huevos);
+   if (f5_var_huevos==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_huevos"><td id="f5_var_huevos">'+f5_var_huevos+'</td><td>huevos </td></tr>');
    }
-   if (p2_var_huevos!=0) {
+   if (f5_var_huevos!=0) {
    
-   $('#p2_var_huevos').empty().append(p2_var_huevos);
+   $('#f5_var_huevos').empty().append(f5_var_huevos);
    }
 
   });
 
 $("#restarhuevos").click(function() {
-   if (p2_var_huevos!=0) {
-   p2_var_huevos--;
-   $('#p2_var_huevos').empty().append(p2_var_huevos);
+   if (f5_var_huevos!=0) {
+   f5_var_huevos--;
+   $('#f5_var_huevos').empty().append(f5_var_huevos);
 
    }
-   if (p2_var_huevos==0) {
+   if (f5_var_huevos==0) {
      //$('#fila_huevos').empty();
      $("#fila_huevos").remove();
 
 
    }
      
-    $('#p2_var_huevos').empty().append(p2_var_huevos);
-    localStorage.setItem("p2_var_huevos", p2_var_huevos);
+    $('#f5_var_huevos').empty().append(f5_var_huevos);
+    localStorage.setItem("f5_var_huevos", f5_var_huevos);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_huevos")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_huevos"><td id="p2_var_huevos">'+localStorage.getItem("p2_var_huevos")+'</td><td>huevos </td></tr>');
+if (localStorage.getItem("f5_var_huevos")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_huevos"><td id="f5_var_huevos">'+localStorage.getItem("f5_var_huevos")+'</td><td>huevos </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA pollo------------------------------------*/
-var p2_var_pollo= localStorage.getItem("p2_var_pollo");
+var f5_var_pollo= localStorage.getItem("f5_var_pollo");
 $(function() {
   $("#sumarpollo").click(function() {
 
-    p2_var_pollo++;
-    localStorage.setItem("p2_var_pollo", p2_var_pollo);
-   $('#p2_var_pollo').empty().append(p2_var_pollo);
-   if (p2_var_pollo==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_pollo"><td id="p2_var_pollo">'+p2_var_pollo+'</td><td>pollo </td></tr>');
+    f5_var_pollo++;
+    localStorage.setItem("f5_var_pollo", f5_var_pollo);
+   $('#f5_var_pollo').empty().append(f5_var_pollo);
+   if (f5_var_pollo==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pollo"><td id="f5_var_pollo">'+f5_var_pollo+'</td><td>pollo </td></tr>');
    }
-   if (p2_var_pollo!=0) {
+   if (f5_var_pollo!=0) {
    
-   $('#p2_var_pollo').empty().append(p2_var_pollo);
+   $('#f5_var_pollo').empty().append(f5_var_pollo);
    }
 
   });
 
 $("#restarpollo").click(function() {
-   if (p2_var_pollo!=0) {
-   p2_var_pollo--;
-   $('#p2_var_pollo').empty().append(p2_var_pollo);
+   if (f5_var_pollo!=0) {
+   f5_var_pollo--;
+   $('#f5_var_pollo').empty().append(f5_var_pollo);
 
    }
-   if (p2_var_pollo==0) {
+   if (f5_var_pollo==0) {
      //$('#fila_pollo').empty();
      $("#fila_pollo").remove();
 
 
    }
      
-    $('#p2_var_pollo').empty().append(p2_var_pollo);
-    localStorage.setItem("p2_var_pollo", p2_var_pollo);
+    $('#f5_var_pollo').empty().append(f5_var_pollo);
+    localStorage.setItem("f5_var_pollo", f5_var_pollo);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_pollo")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_pollo"><td id="p2_var_pollo">'+localStorage.getItem("p2_var_pollo")+'</td><td>pollo </td></tr>');
+if (localStorage.getItem("f5_var_pollo")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pollo"><td id="f5_var_pollo">'+localStorage.getItem("f5_var_pollo")+'</td><td>pollo </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA hamburguesa------------------------------------*/
-var p2_var_hamburguesa= localStorage.getItem("p2_var_hamburguesa");
+var f5_var_hamburguesa= localStorage.getItem("f5_var_hamburguesa");
 $(function() {
   $("#sumarhamburguesa").click(function() {
 
-    p2_var_hamburguesa++;
-    localStorage.setItem("p2_var_hamburguesa", p2_var_hamburguesa);
-   $('#p2_var_hamburguesa').empty().append(p2_var_hamburguesa);
-   if (p2_var_hamburguesa==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_hamburguesa"><td id="p2_var_hamburguesa">'+p2_var_hamburguesa+'</td><td>hamburguesa </td></tr>');
+    f5_var_hamburguesa++;
+    localStorage.setItem("f5_var_hamburguesa", f5_var_hamburguesa);
+   $('#f5_var_hamburguesa').empty().append(f5_var_hamburguesa);
+   if (f5_var_hamburguesa==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_hamburguesa"><td id="f5_var_hamburguesa">'+f5_var_hamburguesa+'</td><td>hamburguesa </td></tr>');
    }
-   if (p2_var_hamburguesa!=0) {
+   if (f5_var_hamburguesa!=0) {
    
-   $('#p2_var_hamburguesa').empty().append(p2_var_hamburguesa);
+   $('#f5_var_hamburguesa').empty().append(f5_var_hamburguesa);
    }
 
   });
 
 $("#restarhamburguesa").click(function() {
-   if (p2_var_hamburguesa!=0) {
-   p2_var_hamburguesa--;
-   $('#p2_var_hamburguesa').empty().append(p2_var_hamburguesa);
+   if (f5_var_hamburguesa!=0) {
+   f5_var_hamburguesa--;
+   $('#f5_var_hamburguesa').empty().append(f5_var_hamburguesa);
 
    }
-   if (p2_var_hamburguesa==0) {
+   if (f5_var_hamburguesa==0) {
      //$('#fila_hamburguesa').empty();
      $("#fila_hamburguesa").remove();
 
 
    }
      
-    $('#p2_var_hamburguesa').empty().append(p2_var_hamburguesa);
-    localStorage.setItem("p2_var_hamburguesa", p2_var_hamburguesa);
+    $('#f5_var_hamburguesa').empty().append(f5_var_hamburguesa);
+    localStorage.setItem("f5_var_hamburguesa", f5_var_hamburguesa);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_hamburguesa")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_hamburguesa"><td id="p2_var_hamburguesa">'+localStorage.getItem("p2_var_hamburguesa")+'</td><td>hamburguesa </td></tr>');
+if (localStorage.getItem("f5_var_hamburguesa")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_hamburguesa"><td id="f5_var_hamburguesa">'+localStorage.getItem("f5_var_hamburguesa")+'</td><td>hamburguesa </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA salmon------------------------------------*/
-var p2_var_salmon= localStorage.getItem("p2_var_salmon");
+var f5_var_salmon= localStorage.getItem("f5_var_salmon");
 $(function() {
   $("#sumarsalmon").click(function() {
 
-    p2_var_salmon++;
-    localStorage.setItem("p2_var_salmon", p2_var_salmon);
-   $('#p2_var_salmon').empty().append(p2_var_salmon);
-   if (p2_var_salmon==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_salmon"><td id="p2_var_salmon">'+p2_var_salmon+'</td><td>salmon </td></tr>');
+    f5_var_salmon++;
+    localStorage.setItem("f5_var_salmon", f5_var_salmon);
+   $('#f5_var_salmon').empty().append(f5_var_salmon);
+   if (f5_var_salmon==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_salmon"><td id="f5_var_salmon">'+f5_var_salmon+'</td><td>salmon </td></tr>');
    }
-   if (p2_var_salmon!=0) {
+   if (f5_var_salmon!=0) {
    
-   $('#p2_var_salmon').empty().append(p2_var_salmon);
+   $('#f5_var_salmon').empty().append(f5_var_salmon);
    }
 
   });
 
 $("#restarsalmon").click(function() {
-   if (p2_var_salmon!=0) {
-   p2_var_salmon--;
-   $('#p2_var_salmon').empty().append(p2_var_salmon);
+   if (f5_var_salmon!=0) {
+   f5_var_salmon--;
+   $('#f5_var_salmon').empty().append(f5_var_salmon);
 
    }
-   if (p2_var_salmon==0) {
+   if (f5_var_salmon==0) {
      //$('#fila_salmon').empty();
      $("#fila_salmon").remove();
 
 
    }
      
-    $('#p2_var_salmon').empty().append(p2_var_salmon);
-    localStorage.setItem("p2_var_salmon", p2_var_salmon);
+    $('#f5_var_salmon').empty().append(f5_var_salmon);
+    localStorage.setItem("f5_var_salmon", f5_var_salmon);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_salmon")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_salmon"><td id="p2_var_salmon">'+localStorage.getItem("p2_var_salmon")+'</td><td>salmon </td></tr>');
+if (localStorage.getItem("f5_var_salmon")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_salmon"><td id="f5_var_salmon">'+localStorage.getItem("f5_var_salmon")+'</td><td>salmon </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA zanahoria------------------------------------*/
-var p2_var_zanahoria= localStorage.getItem("p2_var_zanahoria");
+var f5_var_zanahoria= localStorage.getItem("f5_var_zanahoria");
 $(function() {
   $("#sumarzanahoria").click(function() {
 
-    p2_var_zanahoria++;
-    localStorage.setItem("p2_var_zanahoria", p2_var_zanahoria);
-   $('#p2_var_zanahoria').empty().append(p2_var_zanahoria);
-   if (p2_var_zanahoria==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_zanahoria"><td id="p2_var_zanahoria">'+p2_var_zanahoria+'</td><td>zanahoria </td></tr>');
+    f5_var_zanahoria++;
+    localStorage.setItem("f5_var_zanahoria", f5_var_zanahoria);
+   $('#f5_var_zanahoria').empty().append(f5_var_zanahoria);
+   if (f5_var_zanahoria==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_zanahoria"><td id="f5_var_zanahoria">'+f5_var_zanahoria+'</td><td>zanahoria </td></tr>');
    }
-   if (p2_var_zanahoria!=0) {
+   if (f5_var_zanahoria!=0) {
    
-   $('#p2_var_zanahoria').empty().append(p2_var_zanahoria);
+   $('#f5_var_zanahoria').empty().append(f5_var_zanahoria);
    }
 
   });
 
 $("#restarzanahoria").click(function() {
-   if (p2_var_zanahoria!=0) {
-   p2_var_zanahoria--;
-   $('#p2_var_zanahoria').empty().append(p2_var_zanahoria);
+   if (f5_var_zanahoria!=0) {
+   f5_var_zanahoria--;
+   $('#f5_var_zanahoria').empty().append(f5_var_zanahoria);
 
    }
-   if (p2_var_zanahoria==0) {
+   if (f5_var_zanahoria==0) {
      //$('#fila_zanahoria').empty();
      $("#fila_zanahoria").remove();
 
 
    }
      
-    $('#p2_var_zanahoria').empty().append(p2_var_zanahoria);
-    localStorage.setItem("p2_var_zanahoria", p2_var_zanahoria);
+    $('#f5_var_zanahoria').empty().append(f5_var_zanahoria);
+    localStorage.setItem("f5_var_zanahoria", f5_var_zanahoria);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_zanahoria")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_zanahoria"><td id="p2_var_zanahoria">'+localStorage.getItem("p2_var_zanahoria")+'</td><td>zanahoria </td></tr>');
+if (localStorage.getItem("f5_var_zanahoria")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_zanahoria"><td id="f5_var_zanahoria">'+localStorage.getItem("f5_var_zanahoria")+'</td><td>zanahoria </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA pepino------------------------------------*/
-var p2_var_pepino= localStorage.getItem("p2_var_pepino");
+var f5_var_pepino= localStorage.getItem("f5_var_pepino");
 $(function() {
   $("#sumarpepino").click(function() {
 
-    p2_var_pepino++;
-    localStorage.setItem("p2_var_pepino", p2_var_pepino);
-   $('#p2_var_pepino').empty().append(p2_var_pepino);
-   if (p2_var_pepino==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_pepino"><td id="p2_var_pepino">'+p2_var_pepino+'</td><td>pepino </td></tr>');
+    f5_var_pepino++;
+    localStorage.setItem("f5_var_pepino", f5_var_pepino);
+   $('#f5_var_pepino').empty().append(f5_var_pepino);
+   if (f5_var_pepino==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pepino"><td id="f5_var_pepino">'+f5_var_pepino+'</td><td>pepino </td></tr>');
    }
-   if (p2_var_pepino!=0) {
+   if (f5_var_pepino!=0) {
    
-   $('#p2_var_pepino').empty().append(p2_var_pepino);
+   $('#f5_var_pepino').empty().append(f5_var_pepino);
    }
 
   });
 
 $("#restarpepino").click(function() {
-   if (p2_var_pepino!=0) {
-   p2_var_pepino--;
-   $('#p2_var_pepino').empty().append(p2_var_pepino);
+   if (f5_var_pepino!=0) {
+   f5_var_pepino--;
+   $('#f5_var_pepino').empty().append(f5_var_pepino);
 
    }
-   if (p2_var_pepino==0) {
+   if (f5_var_pepino==0) {
      //$('#fila_pepino').empty();
      $("#fila_pepino").remove();
 
 
    }
      
-    $('#p2_var_pepino').empty().append(p2_var_pepino);
-    localStorage.setItem("p2_var_pepino", p2_var_pepino);
+    $('#f5_var_pepino').empty().append(f5_var_pepino);
+    localStorage.setItem("f5_var_pepino", f5_var_pepino);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_pepino")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_pepino"><td id="p2_var_pepino">'+localStorage.getItem("p2_var_pepino")+'</td><td>pepino </td></tr>');
+if (localStorage.getItem("f5_var_pepino")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pepino"><td id="f5_var_pepino">'+localStorage.getItem("f5_var_pepino")+'</td><td>pepino </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA calabacin------------------------------------*/
-var p2_var_calabacin= localStorage.getItem("p2_var_calabacin");
+var f5_var_calabacin= localStorage.getItem("f5_var_calabacin");
 $(function() {
   $("#sumarcalabacin").click(function() {
 
-    p2_var_calabacin++;
-    localStorage.setItem("p2_var_calabacin", p2_var_calabacin);
-   $('#p2_var_calabacin').empty().append(p2_var_calabacin);
-   if (p2_var_calabacin==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_calabacin"><td id="p2_var_calabacin">'+p2_var_calabacin+'</td><td>calabacin </td></tr>');
+    f5_var_calabacin++;
+    localStorage.setItem("f5_var_calabacin", f5_var_calabacin);
+   $('#f5_var_calabacin').empty().append(f5_var_calabacin);
+   if (f5_var_calabacin==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_calabacin"><td id="f5_var_calabacin">'+f5_var_calabacin+'</td><td>calabacin </td></tr>');
    }
-   if (p2_var_calabacin!=0) {
+   if (f5_var_calabacin!=0) {
    
-   $('#p2_var_calabacin').empty().append(p2_var_calabacin);
+   $('#f5_var_calabacin').empty().append(f5_var_calabacin);
    }
 
   });
 
 $("#restarcalabacin").click(function() {
-   if (p2_var_calabacin!=0) {
-   p2_var_calabacin--;
-   $('#p2_var_calabacin').empty().append(p2_var_calabacin);
+   if (f5_var_calabacin!=0) {
+   f5_var_calabacin--;
+   $('#f5_var_calabacin').empty().append(f5_var_calabacin);
 
    }
-   if (p2_var_calabacin==0) {
+   if (f5_var_calabacin==0) {
      //$('#fila_calabacin').empty();
      $("#fila_calabacin").remove();
 
 
    }
      
-    $('#p2_var_calabacin').empty().append(p2_var_calabacin);
-    localStorage.setItem("p2_var_calabacin", p2_var_calabacin);
+    $('#f5_var_calabacin').empty().append(f5_var_calabacin);
+    localStorage.setItem("f5_var_calabacin", f5_var_calabacin);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_calabacin")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_calabacin"><td id="p2_var_calabacin">'+localStorage.getItem("p2_var_calabacin")+'</td><td>calabacin </td></tr>');
+if (localStorage.getItem("f5_var_calabacin")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_calabacin"><td id="f5_var_calabacin">'+localStorage.getItem("f5_var_calabacin")+'</td><td>calabacin </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA ensalada------------------------------------*/
-var p2_var_ensalada= localStorage.getItem("p2_var_ensalada");
+var f5_var_ensalada= localStorage.getItem("f5_var_ensalada");
 $(function() {
   $("#sumarensalada").click(function() {
 
-    p2_var_ensalada++;
-    localStorage.setItem("p2_var_ensalada", p2_var_ensalada);
-   $('#p2_var_ensalada').empty().append(p2_var_ensalada);
-   if (p2_var_ensalada==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_ensalada"><td id="p2_var_ensalada">'+p2_var_ensalada+'</td><td>ensalada </td></tr>');
+    f5_var_ensalada++;
+    localStorage.setItem("f5_var_ensalada", f5_var_ensalada);
+   $('#f5_var_ensalada').empty().append(f5_var_ensalada);
+   if (f5_var_ensalada==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_ensalada"><td id="f5_var_ensalada">'+f5_var_ensalada+'</td><td>ensalada </td></tr>');
    }
-   if (p2_var_ensalada!=0) {
+   if (f5_var_ensalada!=0) {
    
-   $('#p2_var_ensalada').empty().append(p2_var_ensalada);
+   $('#f5_var_ensalada').empty().append(f5_var_ensalada);
    }
 
   });
 
 $("#restarensalada").click(function() {
-   if (p2_var_ensalada!=0) {
-   p2_var_ensalada--;
-   $('#p2_var_ensalada').empty().append(p2_var_ensalada);
+   if (f5_var_ensalada!=0) {
+   f5_var_ensalada--;
+   $('#f5_var_ensalada').empty().append(f5_var_ensalada);
 
    }
-   if (p2_var_ensalada==0) {
+   if (f5_var_ensalada==0) {
      //$('#fila_ensalada').empty();
      $("#fila_ensalada").remove();
 
 
    }
      
-    $('#p2_var_ensalada').empty().append(p2_var_ensalada);
-    localStorage.setItem("p2_var_ensalada", p2_var_ensalada);
+    $('#f5_var_ensalada').empty().append(f5_var_ensalada);
+    localStorage.setItem("f5_var_ensalada", f5_var_ensalada);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_ensalada")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_ensalada"><td id="p2_var_ensalada">'+localStorage.getItem("p2_var_ensalada")+'</td><td>ensalada </td></tr>');
+if (localStorage.getItem("f5_var_ensalada")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_ensalada"><td id="f5_var_ensalada">'+localStorage.getItem("f5_var_ensalada")+'</td><td>ensalada </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA vinotinto------------------------------------*/
-var p2_var_vinotinto= localStorage.getItem("p2_var_vinotinto");
+var f5_var_vinotinto= localStorage.getItem("f5_var_vinotinto");
 $(function() {
   $("#sumarvinotinto").click(function() {
 
-    p2_var_vinotinto++;
-    localStorage.setItem("p2_var_vinotinto", p2_var_vinotinto);
-   $('#p2_var_vinotinto').empty().append(p2_var_vinotinto);
-   if (p2_var_vinotinto==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinotinto"><td id="p2_var_vinotinto">'+p2_var_vinotinto+'</td><td>vino tinto </td></tr>');
+    f5_var_vinotinto++;
+    localStorage.setItem("f5_var_vinotinto", f5_var_vinotinto);
+   $('#f5_var_vinotinto').empty().append(f5_var_vinotinto);
+   if (f5_var_vinotinto==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinotinto"><td id="f5_var_vinotinto">'+f5_var_vinotinto+'</td><td>vino tinto </td></tr>');
    }
-   if (p2_var_vinotinto!=0) {
+   if (f5_var_vinotinto!=0) {
    
-   $('#p2_var_vinotinto').empty().append(p2_var_vinotinto);
+   $('#f5_var_vinotinto').empty().append(f5_var_vinotinto);
    }
 
   });
 
 $("#restarvinotinto").click(function() {
-   if (p2_var_vinotinto!=0) {
-   p2_var_vinotinto--;
-   $('#p2_var_vinotinto').empty().append(p2_var_vinotinto);
+   if (f5_var_vinotinto!=0) {
+   f5_var_vinotinto--;
+   $('#f5_var_vinotinto').empty().append(f5_var_vinotinto);
 
    }
-   if (p2_var_vinotinto==0) {
+   if (f5_var_vinotinto==0) {
      //$('#fila_vinotinto').empty();
      $("#fila_vinotinto").remove();
 
 
    }
      
-    $('#p2_var_vinotinto').empty().append(p2_var_vinotinto);
-    localStorage.setItem("p2_var_vinotinto", p2_var_vinotinto);
+    $('#f5_var_vinotinto').empty().append(f5_var_vinotinto);
+    localStorage.setItem("f5_var_vinotinto", f5_var_vinotinto);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_vinotinto")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinotinto"><td id="p2_var_vinotinto">'+localStorage.getItem("p2_var_vinotinto")+'</td><td>vinotinto </td></tr>');
+if (localStorage.getItem("f5_var_vinotinto")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinotinto"><td id="f5_var_vinotinto">'+localStorage.getItem("f5_var_vinotinto")+'</td><td>vinotinto </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA vinorosado------------------------------------*/
-var p2_var_vinorosado= localStorage.getItem("p2_var_vinorosado");
+var f5_var_vinorosado= localStorage.getItem("f5_var_vinorosado");
 $(function() {
   $("#sumarvinorosado").click(function() {
 
-    p2_var_vinorosado++;
-    localStorage.setItem("p2_var_vinorosado", p2_var_vinorosado);
-   $('#p2_var_vinorosado').empty().append(p2_var_vinorosado);
-   if (p2_var_vinorosado==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinorosado"><td id="p2_var_vinorosado">'+p2_var_vinorosado+'</td><td>vino rosado </td></tr>');
+    f5_var_vinorosado++;
+    localStorage.setItem("f5_var_vinorosado", f5_var_vinorosado);
+   $('#f5_var_vinorosado').empty().append(f5_var_vinorosado);
+   if (f5_var_vinorosado==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinorosado"><td id="f5_var_vinorosado">'+f5_var_vinorosado+'</td><td>vino rosado </td></tr>');
    }
-   if (p2_var_vinorosado!=0) {
+   if (f5_var_vinorosado!=0) {
    
-   $('#p2_var_vinorosado').empty().append(p2_var_vinorosado);
+   $('#f5_var_vinorosado').empty().append(f5_var_vinorosado);
    }
 
   });
 
 $("#restarvinorosado").click(function() {
-   if (p2_var_vinorosado!=0) {
-   p2_var_vinorosado--;
-   $('#p2_var_vinorosado').empty().append(p2_var_vinorosado);
+   if (f5_var_vinorosado!=0) {
+   f5_var_vinorosado--;
+   $('#f5_var_vinorosado').empty().append(f5_var_vinorosado);
 
    }
-   if (p2_var_vinorosado==0) {
+   if (f5_var_vinorosado==0) {
      //$('#fila_vinorosado').empty();
      $("#fila_vinorosado").remove();
 
 
    }
      
-    $('#p2_var_vinorosado').empty().append(p2_var_vinorosado);
-    localStorage.setItem("p2_var_vinorosado", p2_var_vinorosado);
+    $('#f5_var_vinorosado').empty().append(f5_var_vinorosado);
+    localStorage.setItem("f5_var_vinorosado", f5_var_vinorosado);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_vinorosado")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinorosado"><td id="p2_var_vinorosado">'+localStorage.getItem("p2_var_vinorosado")+'</td><td>vinorosado </td></tr>');
+if (localStorage.getItem("f5_var_vinorosado")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinorosado"><td id="f5_var_vinorosado">'+localStorage.getItem("f5_var_vinorosado")+'</td><td>vinorosado </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA vinoblanco------------------------------------*/
-var p2_var_vinoblanco= localStorage.getItem("p2_var_vinoblanco");
+var f5_var_vinoblanco= localStorage.getItem("f5_var_vinoblanco");
 $(function() {
   $("#sumarvinoblanco").click(function() {
 
-    p2_var_vinoblanco++;
-    localStorage.setItem("p2_var_vinoblanco", p2_var_vinoblanco);
-   $('#p2_var_vinoblanco').empty().append(p2_var_vinoblanco);
-   if (p2_var_vinoblanco==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinoblanco"><td id="p2_var_vinoblanco">'+p2_var_vinoblanco+'</td><td>vino blanco </td></tr>');
+    f5_var_vinoblanco++;
+    localStorage.setItem("f5_var_vinoblanco", f5_var_vinoblanco);
+   $('#f5_var_vinoblanco').empty().append(f5_var_vinoblanco);
+   if (f5_var_vinoblanco==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinoblanco"><td id="f5_var_vinoblanco">'+f5_var_vinoblanco+'</td><td>vino blanco </td></tr>');
    }
-   if (p2_var_vinoblanco!=0) {
+   if (f5_var_vinoblanco!=0) {
    
-   $('#p2_var_vinoblanco').empty().append(p2_var_vinoblanco);
+   $('#f5_var_vinoblanco').empty().append(f5_var_vinoblanco);
    }
 
   });
 
 $("#restarvinoblanco").click(function() {
-   if (p2_var_vinoblanco!=0) {
-   p2_var_vinoblanco--;
-   $('#p2_var_vinoblanco').empty().append(p2_var_vinoblanco);
+   if (f5_var_vinoblanco!=0) {
+   f5_var_vinoblanco--;
+   $('#f5_var_vinoblanco').empty().append(f5_var_vinoblanco);
 
    }
-   if (p2_var_vinoblanco==0) {
+   if (f5_var_vinoblanco==0) {
      //$('#fila_vinoblanco').empty();
      $("#fila_vinoblanco").remove();
 
 
    }
      
-    $('#p2_var_vinoblanco').empty().append(p2_var_vinoblanco);
-    localStorage.setItem("p2_var_vinoblanco", p2_var_vinoblanco);
+    $('#f5_var_vinoblanco').empty().append(f5_var_vinoblanco);
+    localStorage.setItem("f5_var_vinoblanco", f5_var_vinoblanco);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_vinoblanco")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinoblanco"><td id="p2_var_vinoblanco">'+localStorage.getItem("p2_var_vinoblanco")+'</td><td>vinoblanco </td></tr>');
+if (localStorage.getItem("f5_var_vinoblanco")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinoblanco"><td id="f5_var_vinoblanco">'+localStorage.getItem("f5_var_vinoblanco")+'</td><td>vinoblanco </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 /*------------------------------LOGICA cocacola------------------------------------*/
-var p2_var_cocacola= localStorage.getItem("p2_var_cocacola");
+var f5_var_cocacola= localStorage.getItem("f5_var_cocacola");
 $(function() {
   $("#sumarcocacola").click(function() {
 
-    p2_var_cocacola++;
-    localStorage.setItem("p2_var_cocacola", p2_var_cocacola);
-   $('#p2_var_cocacola').empty().append(p2_var_cocacola);
-   if (p2_var_cocacola==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_cocacola"><td id="p2_var_cocacola">'+p2_var_cocacola+'</td><td>coca-cola </td></tr>');
+    f5_var_cocacola++;
+    localStorage.setItem("f5_var_cocacola", f5_var_cocacola);
+   $('#f5_var_cocacola').empty().append(f5_var_cocacola);
+   if (f5_var_cocacola==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cocacola"><td id="f5_var_cocacola">'+f5_var_cocacola+'</td><td>coca-cola </td></tr>');
    }
-   if (p2_var_cocacola!=0) {
+   if (f5_var_cocacola!=0) {
    
-   $('#p2_var_cocacola').empty().append(p2_var_cocacola);
+   $('#f5_var_cocacola').empty().append(f5_var_cocacola);
    }
 
   });
 
 $("#restarcocacola").click(function() {
-   if (p2_var_cocacola!=0) {
-   p2_var_cocacola--;
-   $('#p2_var_cocacola').empty().append(p2_var_cocacola);
+   if (f5_var_cocacola!=0) {
+   f5_var_cocacola--;
+   $('#f5_var_cocacola').empty().append(f5_var_cocacola);
 
    }
-   if (p2_var_cocacola==0) {
+   if (f5_var_cocacola==0) {
      //$('#fila_cocacola').empty();
      $("#fila_cocacola").remove();
 
 
    }
      
-    $('#p2_var_cocacola').empty().append(p2_var_cocacola);
-    localStorage.setItem("p2_var_cocacola", p2_var_cocacola);
+    $('#f5_var_cocacola').empty().append(f5_var_cocacola);
+    localStorage.setItem("f5_var_cocacola", f5_var_cocacola);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_cocacola")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_cocacola"><td id="p2_var_cocacola">'+localStorage.getItem("p2_var_cocacola")+'</td><td>cocacola </td></tr>');
+if (localStorage.getItem("f5_var_cocacola")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cocacola"><td id="f5_var_cocacola">'+localStorage.getItem("f5_var_cocacola")+'</td><td>cocacola </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
    
 /*------------------------------LOGICA manzana------------------------------------*/
-var p2_var_manzana= localStorage.getItem("p2_var_manzana");
+var f5_var_manzana= localStorage.getItem("f5_var_manzana");
 $(function() {
   $("#sumarmanzana").click(function() {
 
-    p2_var_manzana++;
-    localStorage.setItem("p2_var_manzana", p2_var_manzana);
-   $('#p2_var_manzana').empty().append(p2_var_manzana);
-   if (p2_var_manzana==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_manzana"><td id="p2_var_manzana">'+p2_var_manzana+'</td><td>coca-cola </td></tr>');
+    f5_var_manzana++;
+    localStorage.setItem("f5_var_manzana", f5_var_manzana);
+   $('#f5_var_manzana').empty().append(f5_var_manzana);
+   if (f5_var_manzana==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_manzana"><td id="f5_var_manzana">'+f5_var_manzana+'</td><td>coca-cola </td></tr>');
    }
-   if (p2_var_manzana!=0) {
+   if (f5_var_manzana!=0) {
    
-   $('#p2_var_manzana').empty().append(p2_var_manzana);
+   $('#f5_var_manzana').empty().append(f5_var_manzana);
    }
 
   });
 
 $("#restarmanzana").click(function() {
-   if (p2_var_manzana!=0) {
-   p2_var_manzana--;
-   $('#p2_var_manzana').empty().append(p2_var_manzana);
+   if (f5_var_manzana!=0) {
+   f5_var_manzana--;
+   $('#f5_var_manzana').empty().append(f5_var_manzana);
 
    }
-   if (p2_var_manzana==0) {
+   if (f5_var_manzana==0) {
      //$('#fila_manzana').empty();
      $("#fila_manzana").remove();
 
 
    }
      
-    $('#p2_var_manzana').empty().append(p2_var_manzana);
-    localStorage.setItem("p2_var_manzana", p2_var_manzana);
+    $('#f5_var_manzana').empty().append(f5_var_manzana);
+    localStorage.setItem("f5_var_manzana", f5_var_manzana);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_manzana")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_manzana"><td id="p2_var_manzana">'+localStorage.getItem("p2_var_manzana")+'</td><td>manzana </td></tr>');
+if (localStorage.getItem("f5_var_manzana")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_manzana"><td id="f5_var_manzana">'+localStorage.getItem("f5_var_manzana")+'</td><td>manzana </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 
 /*------------------------------LOGICA arandanos------------------------------------*/
-var p2_var_arandanos= localStorage.getItem("p2_var_arandanos");
+var f5_var_arandanos= localStorage.getItem("f5_var_arandanos");
 $(function() {
   $("#sumararandanos").click(function() {
 
-    p2_var_arandanos++;
-    localStorage.setItem("p2_var_arandanos", p2_var_arandanos);
-   $('#p2_var_arandanos').empty().append(p2_var_arandanos);
-   if (p2_var_arandanos==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_arandanos"><td id="p2_var_arandanos">'+p2_var_arandanos+'</td><td>coca-cola </td></tr>');
+    f5_var_arandanos++;
+    localStorage.setItem("f5_var_arandanos", f5_var_arandanos);
+   $('#f5_var_arandanos').empty().append(f5_var_arandanos);
+   if (f5_var_arandanos==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_arandanos"><td id="f5_var_arandanos">'+f5_var_arandanos+'</td><td>coca-cola </td></tr>');
    }
-   if (p2_var_arandanos!=0) {
+   if (f5_var_arandanos!=0) {
    
-   $('#p2_var_arandanos').empty().append(p2_var_arandanos);
+   $('#f5_var_arandanos').empty().append(f5_var_arandanos);
    }
 
   });
 
 $("#restararandanos").click(function() {
-   if (p2_var_arandanos!=0) {
-   p2_var_arandanos--;
-   $('#p2_var_arandanos').empty().append(p2_var_arandanos);
+   if (f5_var_arandanos!=0) {
+   f5_var_arandanos--;
+   $('#f5_var_arandanos').empty().append(f5_var_arandanos);
 
    }
-   if (p2_var_arandanos==0) {
+   if (f5_var_arandanos==0) {
      //$('#fila_arandanos').empty();
      $("#fila_arandanos").remove();
 
 
    }
      
-    $('#p2_var_arandanos').empty().append(p2_var_arandanos);
-    localStorage.setItem("p2_var_arandanos", p2_var_arandanos);
+    $('#f5_var_arandanos').empty().append(f5_var_arandanos);
+    localStorage.setItem("f5_var_arandanos", f5_var_arandanos);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_arandanos")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_arandanos"><td id="p2_var_arandanos">'+localStorage.getItem("p2_var_arandanos")+'</td><td>arandanos </td></tr>');
+if (localStorage.getItem("f5_var_arandanos")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_arandanos"><td id="f5_var_arandanos">'+localStorage.getItem("f5_var_arandanos")+'</td><td>arandanos </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA uvas------------------------------------*/
-var p2_var_uvas= localStorage.getItem("p2_var_uvas");
+var f5_var_uvas= localStorage.getItem("f5_var_uvas");
 $(function() {
   $("#sumaruvas").click(function() {
 
-    p2_var_uvas++;
-    localStorage.setItem("p2_var_uvas", p2_var_uvas);
-   $('#p2_var_uvas').empty().append(p2_var_uvas);
-   if (p2_var_uvas==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_uvas"><td id="p2_var_uvas">'+p2_var_uvas+'</td><td>coca-cola </td></tr>');
+    f5_var_uvas++;
+    localStorage.setItem("f5_var_uvas", f5_var_uvas);
+   $('#f5_var_uvas').empty().append(f5_var_uvas);
+   if (f5_var_uvas==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_uvas"><td id="f5_var_uvas">'+f5_var_uvas+'</td><td>coca-cola </td></tr>');
    }
-   if (p2_var_uvas!=0) {
+   if (f5_var_uvas!=0) {
    
-   $('#p2_var_uvas').empty().append(p2_var_uvas);
+   $('#f5_var_uvas').empty().append(f5_var_uvas);
    }
 
   });
 
 $("#restaruvas").click(function() {
-   if (p2_var_uvas!=0) {
-   p2_var_uvas--;
-   $('#p2_var_uvas').empty().append(p2_var_uvas);
+   if (f5_var_uvas!=0) {
+   f5_var_uvas--;
+   $('#f5_var_uvas').empty().append(f5_var_uvas);
 
    }
-   if (p2_var_uvas==0) {
+   if (f5_var_uvas==0) {
      //$('#fila_uvas').empty();
      $("#fila_uvas").remove();
 
 
    }
      
-    $('#p2_var_uvas').empty().append(p2_var_uvas);
-    localStorage.setItem("p2_var_uvas", p2_var_uvas);
+    $('#f5_var_uvas').empty().append(f5_var_uvas);
+    localStorage.setItem("f5_var_uvas", f5_var_uvas);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_uvas")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_uvas"><td id="p2_var_uvas">'+localStorage.getItem("p2_var_uvas")+'</td><td>uvas </td></tr>');
+if (localStorage.getItem("f5_var_uvas")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_uvas"><td id="f5_var_uvas">'+localStorage.getItem("f5_var_uvas")+'</td><td>uvas </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/
 
 /*------------------------------LOGICA cerezas------------------------------------*/
-var p2_var_cerezas= localStorage.getItem("p2_var_cerezas");
+var f5_var_cerezas= localStorage.getItem("f5_var_cerezas");
 $(function() {
   $("#sumarcerezas").click(function() {
 
-    p2_var_cerezas++;
-    localStorage.setItem("p2_var_cerezas", p2_var_cerezas);
-   $('#p2_var_cerezas').empty().append(p2_var_cerezas);
-   if (p2_var_cerezas==1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_cerezas"><td id="p2_var_cerezas">'+p2_var_cerezas+'</td><td>coca-cola </td></tr>');
+    f5_var_cerezas++;
+    localStorage.setItem("f5_var_cerezas", f5_var_cerezas);
+   $('#f5_var_cerezas').empty().append(f5_var_cerezas);
+   if (f5_var_cerezas==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cerezas"><td id="f5_var_cerezas">'+f5_var_cerezas+'</td><td>coca-cola </td></tr>');
    }
-   if (p2_var_cerezas!=0) {
+   if (f5_var_cerezas!=0) {
    
-   $('#p2_var_cerezas').empty().append(p2_var_cerezas);
+   $('#f5_var_cerezas').empty().append(f5_var_cerezas);
    }
 
   });
 
 $("#restarcerezas").click(function() {
-   if (p2_var_cerezas!=0) {
-   p2_var_cerezas--;
-   $('#p2_var_cerezas').empty().append(p2_var_cerezas);
+   if (f5_var_cerezas!=0) {
+   f5_var_cerezas--;
+   $('#f5_var_cerezas').empty().append(f5_var_cerezas);
 
    }
-   if (p2_var_cerezas==0) {
+   if (f5_var_cerezas==0) {
      //$('#fila_cerezas').empty();
      $("#fila_cerezas").remove();
 
 
    }
      
-    $('#p2_var_cerezas').empty().append(p2_var_cerezas);
-    localStorage.setItem("p2_var_cerezas", p2_var_cerezas);
+    $('#f5_var_cerezas').empty().append(f5_var_cerezas);
+    localStorage.setItem("f5_var_cerezas", f5_var_cerezas);
 });
 
 });
 
 $(document).ready(function(){
-if (localStorage.getItem("p2_var_cerezas")>=1) {
-    $('#tablac1 > tbody:last-child').append('<tr id="fila_cerezas"><td id="p2_var_cerezas">'+localStorage.getItem("p2_var_cerezas")+'</td><td>cerezas </td></tr>');
+if (localStorage.getItem("f5_var_cerezas")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cerezas"><td id="f5_var_cerezas">'+localStorage.getItem("f5_var_cerezas")+'</td><td>cerezas </td></tr>');
    }
 });
 /*--------------------------FIN--------------------------------*/

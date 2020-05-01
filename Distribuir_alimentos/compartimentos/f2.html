@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!--Popper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../style_st.css">
+    
+    <title>Distribucion</title>
+    <script>
+        $(document).ready(function(){
+         // $(".parte-izq-botones").click(function(){
+          //  $(".parte-izq-botones").hide(); //no funciona poner los ms de la animacion
+         //   $(".desplegable-tabla").show(); //mostramos el dropdown
+          //});
+            $(".parte-izq-botones").hide();
+             $(".desplegable-tabla").show();
+        });
+
+        $(document).ready(function(){
+          $(".lacteos").click(function(){
+            //$(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".lacteos").show(); //mostramos los lacteos
+          });
+        });
+
+        $(document).ready(function(){
+          $(".carnes").click(function(){
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".carnes").show(); //mostramos las carnes
+          });
+        });
+
+        $(document).ready(function(){
+          $(".hortalizas").click(function(){
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".hortalizas").show(); //mostramos las carnes
+          });
+        });
+
+        $(document).ready(function(){
+          $(".frutas").click(function(){
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".frutas").show(); //mostramos las carnes
+          });
+        });
+        $(document).ready(function(){
+          $(".bebidas").click(function(){
+           // $(".fase1").hide(); //no funciona poner los ms de la animacion
+            $(".fase3").hide(); //quitamos el resto de categorias
+            $(".bebidas").show(); //mostramos las carnes
+          });
+        });
+
+
+
+
+
+
+/*------------------------------LOGICA LECHE------------------------------------*/
+var f2_var_leche= localStorage.getItem("f2_var_leche");
+$(function() {
+  $("#sumarLeche").click(function() {
+
+    f2_var_leche++;
+    localStorage.setItem("f2_var_leche", f2_var_leche);
+   $('#f2_var_leche').empty().append(f2_var_leche);
+   if (f2_var_leche==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="f2_var_leche">'+f2_var_leche+'</td><td>leche </td></tr>');
+   }
+   if (f2_var_leche!=0) {
+   
+   $('#f2_var_leche').empty().append(f2_var_leche);
+   }
+   if (f2_var_leche==0) {
+    $('#fila_leche').empty();
+   }
+
+  });
+
+$("#restarLeche").click(function() {
+   if (f2_var_leche!=0) {
+   f2_var_leche--;
+   $('#f2_var_leche').empty().append(f2_var_leche);
+
+   }
+   if (f2_var_leche==0) {
+     $('#fila_leche').remove();
+   }
+     
+    $('#f2_var_leche').empty().append(f2_var_leche);
+    localStorage.setItem("f2_var_leche", f2_var_leche);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_leche")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_leche"><td id="f2_var_leche">'+localStorage.getItem("f2_var_leche")+'</td><td>leche </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA YOUGUR------------------------------------*/
+var f2_var_yogur= localStorage.getItem("f2_var_yogur");
+$(function() {
+  $("#sumaryogur").click(function() {
+
+    f2_var_yogur++;
+    localStorage.setItem("f2_var_yogur", f2_var_yogur);
+   $('#f2_var_yogur').empty().append(f2_var_yogur);
+   if (f2_var_yogur==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_yogur"><td id="f2_var_yogur">'+f2_var_yogur+'</td><td>yogur </td></tr>');
+   }
+   if (f2_var_yogur!=0) {
+   
+   $('#f2_var_yogur').empty().append(f2_var_yogur);
+   }
+   if (f2_var_yogur==0) {
+    $('#fila_yogur').empty();
+   }
+
+  });
+
+$("#restaryogur").click(function() {
+   if (f2_var_yogur!=0) {
+   f2_var_yogur--;
+   $('#f2_var_yogur').empty().append(f2_var_yogur);
+
+   }
+   if (f2_var_yogur==0) {
+     $('#fila_yogur').remove();
+   }
+     
+    $('#f2_var_yogur').empty().append(f2_var_yogur);
+    localStorage.setItem("f2_var_yogur", f2_var_yogur);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_yogur")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_yogur"><td id="f2_var_yogur">'+localStorage.getItem("f2_var_yogur")+'</td><td>yogur </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+
+
+/*------------------------------LOGICA mantqulla------------------------------------*/
+var f2_var_mantequilla= localStorage.getItem("f2_var_mantequilla");
+$(function() {
+  $("#sumarmantequilla").click(function() {
+
+    f2_var_mantequilla++;
+    localStorage.setItem("f2_var_mantequilla", f2_var_mantequilla);
+   $('#f2_var_mantequilla').empty().append(f2_var_mantequilla);
+   if (f2_var_mantequilla==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_mantequilla"><td id="f2_var_mantequilla">'+f2_var_mantequilla+'</td><td>mantequilla </td></tr>');
+   }
+   if (f2_var_mantequilla!=0) {
+   
+   $('#f2_var_mantequilla').empty().append(f2_var_mantequilla);
+   }
+   if (f2_var_mantequilla==0) {
+    $('#fila_mantequilla').empty();
+   }
+
+  });
+
+$("#restarmantequilla").click(function() {
+   if (f2_var_mantequilla!=0) {
+   f2_var_mantequilla--;
+   $('#f2_var_mantequilla').empty().append(f2_var_mantequilla);
+
+   }
+   if (f2_var_mantequilla==0) {
+     $('#fila_mantequilla').remove();
+   }
+     
+    $('#f2_var_mantequilla').empty().append(f2_var_mantequilla);
+    localStorage.setItem("f2_var_mantequilla", f2_var_mantequilla);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_mantequilla")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_mantequilla"><td id="f2_var_mantequilla">'+localStorage.getItem("f2_var_mantequilla")+'</td><td>mantequilla </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+
+/*------------------------------LOGICA queso------------------------------------*/
+var f2_var_queso= localStorage.getItem("f2_var_queso");
+$(function() {
+  $("#sumarqueso").click(function() {
+
+    f2_var_queso++;
+    localStorage.setItem("f2_var_queso", f2_var_queso);
+   $('#f2_var_queso').empty().append(f2_var_queso);
+   if (f2_var_queso==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_queso"><td id="f2_var_queso">'+f2_var_queso+'</td><td>queso </td></tr>');
+   }
+   if (f2_var_queso!=0) {
+   
+   $('#f2_var_queso').empty().append(f2_var_queso);
+   }
+
+  });
+
+$("#restarqueso").click(function() {
+   if (f2_var_queso!=0) {
+   f2_var_queso--;
+   $('#f2_var_queso').empty().append(f2_var_queso);
+
+   }
+   if (f2_var_queso==0) {
+     //$('#fila_queso').empty();
+     $("#fila_queso").remove();
+
+
+   }
+     
+    $('#f2_var_queso').empty().append(f2_var_queso);
+    localStorage.setItem("f2_var_queso", f2_var_queso);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_queso")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_queso"><td id="f2_var_queso">'+localStorage.getItem("f2_var_queso")+'</td><td>queso </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+
+
+/*------------------------------LOGICA huevos------------------------------------*/
+var f2_var_huevos= localStorage.getItem("f2_var_huevos");
+$(function() {
+  $("#sumarhuevos").click(function() {
+
+    f2_var_huevos++;
+    localStorage.setItem("f2_var_huevos", f2_var_huevos);
+   $('#f2_var_huevos').empty().append(f2_var_huevos);
+   if (f2_var_huevos==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_huevos"><td id="f2_var_huevos">'+f2_var_huevos+'</td><td>huevos </td></tr>');
+   }
+   if (f2_var_huevos!=0) {
+   
+   $('#f2_var_huevos').empty().append(f2_var_huevos);
+   }
+
+  });
+
+$("#restarhuevos").click(function() {
+   if (f2_var_huevos!=0) {
+   f2_var_huevos--;
+   $('#f2_var_huevos').empty().append(f2_var_huevos);
+
+   }
+   if (f2_var_huevos==0) {
+     //$('#fila_huevos').empty();
+     $("#fila_huevos").remove();
+
+
+   }
+     
+    $('#f2_var_huevos').empty().append(f2_var_huevos);
+    localStorage.setItem("f2_var_huevos", f2_var_huevos);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_huevos")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_huevos"><td id="f2_var_huevos">'+localStorage.getItem("f2_var_huevos")+'</td><td>huevos </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA pollo------------------------------------*/
+var f2_var_pollo= localStorage.getItem("f2_var_pollo");
+$(function() {
+  $("#sumarpollo").click(function() {
+
+    f2_var_pollo++;
+    localStorage.setItem("f2_var_pollo", f2_var_pollo);
+   $('#f2_var_pollo').empty().append(f2_var_pollo);
+   if (f2_var_pollo==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pollo"><td id="f2_var_pollo">'+f2_var_pollo+'</td><td>pollo </td></tr>');
+   }
+   if (f2_var_pollo!=0) {
+   
+   $('#f2_var_pollo').empty().append(f2_var_pollo);
+   }
+
+  });
+
+$("#restarpollo").click(function() {
+   if (f2_var_pollo!=0) {
+   f2_var_pollo--;
+   $('#f2_var_pollo').empty().append(f2_var_pollo);
+
+   }
+   if (f2_var_pollo==0) {
+     //$('#fila_pollo').empty();
+     $("#fila_pollo").remove();
+
+
+   }
+     
+    $('#f2_var_pollo').empty().append(f2_var_pollo);
+    localStorage.setItem("f2_var_pollo", f2_var_pollo);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_pollo")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pollo"><td id="f2_var_pollo">'+localStorage.getItem("f2_var_pollo")+'</td><td>pollo </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA hamburguesa------------------------------------*/
+var f2_var_hamburguesa= localStorage.getItem("f2_var_hamburguesa");
+$(function() {
+  $("#sumarhamburguesa").click(function() {
+
+    f2_var_hamburguesa++;
+    localStorage.setItem("f2_var_hamburguesa", f2_var_hamburguesa);
+   $('#f2_var_hamburguesa').empty().append(f2_var_hamburguesa);
+   if (f2_var_hamburguesa==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_hamburguesa"><td id="f2_var_hamburguesa">'+f2_var_hamburguesa+'</td><td>hamburguesa </td></tr>');
+   }
+   if (f2_var_hamburguesa!=0) {
+   
+   $('#f2_var_hamburguesa').empty().append(f2_var_hamburguesa);
+   }
+
+  });
+
+$("#restarhamburguesa").click(function() {
+   if (f2_var_hamburguesa!=0) {
+   f2_var_hamburguesa--;
+   $('#f2_var_hamburguesa').empty().append(f2_var_hamburguesa);
+
+   }
+   if (f2_var_hamburguesa==0) {
+     //$('#fila_hamburguesa').empty();
+     $("#fila_hamburguesa").remove();
+
+
+   }
+     
+    $('#f2_var_hamburguesa').empty().append(f2_var_hamburguesa);
+    localStorage.setItem("f2_var_hamburguesa", f2_var_hamburguesa);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_hamburguesa")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_hamburguesa"><td id="f2_var_hamburguesa">'+localStorage.getItem("f2_var_hamburguesa")+'</td><td>hamburguesa </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA salmon------------------------------------*/
+var f2_var_salmon= localStorage.getItem("f2_var_salmon");
+$(function() {
+  $("#sumarsalmon").click(function() {
+
+    f2_var_salmon++;
+    localStorage.setItem("f2_var_salmon", f2_var_salmon);
+   $('#f2_var_salmon').empty().append(f2_var_salmon);
+   if (f2_var_salmon==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_salmon"><td id="f2_var_salmon">'+f2_var_salmon+'</td><td>salmon </td></tr>');
+   }
+   if (f2_var_salmon!=0) {
+   
+   $('#f2_var_salmon').empty().append(f2_var_salmon);
+   }
+
+  });
+
+$("#restarsalmon").click(function() {
+   if (f2_var_salmon!=0) {
+   f2_var_salmon--;
+   $('#f2_var_salmon').empty().append(f2_var_salmon);
+
+   }
+   if (f2_var_salmon==0) {
+     //$('#fila_salmon').empty();
+     $("#fila_salmon").remove();
+
+
+   }
+     
+    $('#f2_var_salmon').empty().append(f2_var_salmon);
+    localStorage.setItem("f2_var_salmon", f2_var_salmon);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_salmon")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_salmon"><td id="f2_var_salmon">'+localStorage.getItem("f2_var_salmon")+'</td><td>salmon </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA zanahoria------------------------------------*/
+var f2_var_zanahoria= localStorage.getItem("f2_var_zanahoria");
+$(function() {
+  $("#sumarzanahoria").click(function() {
+
+    f2_var_zanahoria++;
+    localStorage.setItem("f2_var_zanahoria", f2_var_zanahoria);
+   $('#f2_var_zanahoria').empty().append(f2_var_zanahoria);
+   if (f2_var_zanahoria==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_zanahoria"><td id="f2_var_zanahoria">'+f2_var_zanahoria+'</td><td>zanahoria </td></tr>');
+   }
+   if (f2_var_zanahoria!=0) {
+   
+   $('#f2_var_zanahoria').empty().append(f2_var_zanahoria);
+   }
+
+  });
+
+$("#restarzanahoria").click(function() {
+   if (f2_var_zanahoria!=0) {
+   f2_var_zanahoria--;
+   $('#f2_var_zanahoria').empty().append(f2_var_zanahoria);
+
+   }
+   if (f2_var_zanahoria==0) {
+     //$('#fila_zanahoria').empty();
+     $("#fila_zanahoria").remove();
+
+
+   }
+     
+    $('#f2_var_zanahoria').empty().append(f2_var_zanahoria);
+    localStorage.setItem("f2_var_zanahoria", f2_var_zanahoria);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_zanahoria")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_zanahoria"><td id="f2_var_zanahoria">'+localStorage.getItem("f2_var_zanahoria")+'</td><td>zanahoria </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA pepino------------------------------------*/
+var f2_var_pepino= localStorage.getItem("f2_var_pepino");
+$(function() {
+  $("#sumarpepino").click(function() {
+
+    f2_var_pepino++;
+    localStorage.setItem("f2_var_pepino", f2_var_pepino);
+   $('#f2_var_pepino').empty().append(f2_var_pepino);
+   if (f2_var_pepino==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pepino"><td id="f2_var_pepino">'+f2_var_pepino+'</td><td>pepino </td></tr>');
+   }
+   if (f2_var_pepino!=0) {
+   
+   $('#f2_var_pepino').empty().append(f2_var_pepino);
+   }
+
+  });
+
+$("#restarpepino").click(function() {
+   if (f2_var_pepino!=0) {
+   f2_var_pepino--;
+   $('#f2_var_pepino').empty().append(f2_var_pepino);
+
+   }
+   if (f2_var_pepino==0) {
+     //$('#fila_pepino').empty();
+     $("#fila_pepino").remove();
+
+
+   }
+     
+    $('#f2_var_pepino').empty().append(f2_var_pepino);
+    localStorage.setItem("f2_var_pepino", f2_var_pepino);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_pepino")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_pepino"><td id="f2_var_pepino">'+localStorage.getItem("f2_var_pepino")+'</td><td>pepino </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA calabacin------------------------------------*/
+var f2_var_calabacin= localStorage.getItem("f2_var_calabacin");
+$(function() {
+  $("#sumarcalabacin").click(function() {
+
+    f2_var_calabacin++;
+    localStorage.setItem("f2_var_calabacin", f2_var_calabacin);
+   $('#f2_var_calabacin').empty().append(f2_var_calabacin);
+   if (f2_var_calabacin==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_calabacin"><td id="f2_var_calabacin">'+f2_var_calabacin+'</td><td>calabacin </td></tr>');
+   }
+   if (f2_var_calabacin!=0) {
+   
+   $('#f2_var_calabacin').empty().append(f2_var_calabacin);
+   }
+
+  });
+
+$("#restarcalabacin").click(function() {
+   if (f2_var_calabacin!=0) {
+   f2_var_calabacin--;
+   $('#f2_var_calabacin').empty().append(f2_var_calabacin);
+
+   }
+   if (f2_var_calabacin==0) {
+     //$('#fila_calabacin').empty();
+     $("#fila_calabacin").remove();
+
+
+   }
+     
+    $('#f2_var_calabacin').empty().append(f2_var_calabacin);
+    localStorage.setItem("f2_var_calabacin", f2_var_calabacin);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_calabacin")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_calabacin"><td id="f2_var_calabacin">'+localStorage.getItem("f2_var_calabacin")+'</td><td>calabacin </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA ensalada------------------------------------*/
+var f2_var_ensalada= localStorage.getItem("f2_var_ensalada");
+$(function() {
+  $("#sumarensalada").click(function() {
+
+    f2_var_ensalada++;
+    localStorage.setItem("f2_var_ensalada", f2_var_ensalada);
+   $('#f2_var_ensalada').empty().append(f2_var_ensalada);
+   if (f2_var_ensalada==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_ensalada"><td id="f2_var_ensalada">'+f2_var_ensalada+'</td><td>ensalada </td></tr>');
+   }
+   if (f2_var_ensalada!=0) {
+   
+   $('#f2_var_ensalada').empty().append(f2_var_ensalada);
+   }
+
+  });
+
+$("#restarensalada").click(function() {
+   if (f2_var_ensalada!=0) {
+   f2_var_ensalada--;
+   $('#f2_var_ensalada').empty().append(f2_var_ensalada);
+
+   }
+   if (f2_var_ensalada==0) {
+     //$('#fila_ensalada').empty();
+     $("#fila_ensalada").remove();
+
+
+   }
+     
+    $('#f2_var_ensalada').empty().append(f2_var_ensalada);
+    localStorage.setItem("f2_var_ensalada", f2_var_ensalada);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_ensalada")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_ensalada"><td id="f2_var_ensalada">'+localStorage.getItem("f2_var_ensalada")+'</td><td>ensalada </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA vinotinto------------------------------------*/
+var f2_var_vinotinto= localStorage.getItem("f2_var_vinotinto");
+$(function() {
+  $("#sumarvinotinto").click(function() {
+
+    f2_var_vinotinto++;
+    localStorage.setItem("f2_var_vinotinto", f2_var_vinotinto);
+   $('#f2_var_vinotinto').empty().append(f2_var_vinotinto);
+   if (f2_var_vinotinto==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinotinto"><td id="f2_var_vinotinto">'+f2_var_vinotinto+'</td><td>vino tinto </td></tr>');
+   }
+   if (f2_var_vinotinto!=0) {
+   
+   $('#f2_var_vinotinto').empty().append(f2_var_vinotinto);
+   }
+
+  });
+
+$("#restarvinotinto").click(function() {
+   if (f2_var_vinotinto!=0) {
+   f2_var_vinotinto--;
+   $('#f2_var_vinotinto').empty().append(f2_var_vinotinto);
+
+   }
+   if (f2_var_vinotinto==0) {
+     //$('#fila_vinotinto').empty();
+     $("#fila_vinotinto").remove();
+
+
+   }
+     
+    $('#f2_var_vinotinto').empty().append(f2_var_vinotinto);
+    localStorage.setItem("f2_var_vinotinto", f2_var_vinotinto);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_vinotinto")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinotinto"><td id="f2_var_vinotinto">'+localStorage.getItem("f2_var_vinotinto")+'</td><td>vinotinto </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA vinorosado------------------------------------*/
+var f2_var_vinorosado= localStorage.getItem("f2_var_vinorosado");
+$(function() {
+  $("#sumarvinorosado").click(function() {
+
+    f2_var_vinorosado++;
+    localStorage.setItem("f2_var_vinorosado", f2_var_vinorosado);
+   $('#f2_var_vinorosado').empty().append(f2_var_vinorosado);
+   if (f2_var_vinorosado==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinorosado"><td id="f2_var_vinorosado">'+f2_var_vinorosado+'</td><td>vino rosado </td></tr>');
+   }
+   if (f2_var_vinorosado!=0) {
+   
+   $('#f2_var_vinorosado').empty().append(f2_var_vinorosado);
+   }
+
+  });
+
+$("#restarvinorosado").click(function() {
+   if (f2_var_vinorosado!=0) {
+   f2_var_vinorosado--;
+   $('#f2_var_vinorosado').empty().append(f2_var_vinorosado);
+
+   }
+   if (f2_var_vinorosado==0) {
+     //$('#fila_vinorosado').empty();
+     $("#fila_vinorosado").remove();
+
+
+   }
+     
+    $('#f2_var_vinorosado').empty().append(f2_var_vinorosado);
+    localStorage.setItem("f2_var_vinorosado", f2_var_vinorosado);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_vinorosado")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinorosado"><td id="f2_var_vinorosado">'+localStorage.getItem("f2_var_vinorosado")+'</td><td>vinorosado </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA vinoblanco------------------------------------*/
+var f2_var_vinoblanco= localStorage.getItem("f2_var_vinoblanco");
+$(function() {
+  $("#sumarvinoblanco").click(function() {
+
+    f2_var_vinoblanco++;
+    localStorage.setItem("f2_var_vinoblanco", f2_var_vinoblanco);
+   $('#f2_var_vinoblanco').empty().append(f2_var_vinoblanco);
+   if (f2_var_vinoblanco==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinoblanco"><td id="f2_var_vinoblanco">'+f2_var_vinoblanco+'</td><td>vino blanco </td></tr>');
+   }
+   if (f2_var_vinoblanco!=0) {
+   
+   $('#f2_var_vinoblanco').empty().append(f2_var_vinoblanco);
+   }
+
+  });
+
+$("#restarvinoblanco").click(function() {
+   if (f2_var_vinoblanco!=0) {
+   f2_var_vinoblanco--;
+   $('#f2_var_vinoblanco').empty().append(f2_var_vinoblanco);
+
+   }
+   if (f2_var_vinoblanco==0) {
+     //$('#fila_vinoblanco').empty();
+     $("#fila_vinoblanco").remove();
+
+
+   }
+     
+    $('#f2_var_vinoblanco').empty().append(f2_var_vinoblanco);
+    localStorage.setItem("f2_var_vinoblanco", f2_var_vinoblanco);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_vinoblanco")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_vinoblanco"><td id="f2_var_vinoblanco">'+localStorage.getItem("f2_var_vinoblanco")+'</td><td>vinoblanco </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+/*------------------------------LOGICA cocacola------------------------------------*/
+var f2_var_cocacola= localStorage.getItem("f2_var_cocacola");
+$(function() {
+  $("#sumarcocacola").click(function() {
+
+    f2_var_cocacola++;
+    localStorage.setItem("f2_var_cocacola", f2_var_cocacola);
+   $('#f2_var_cocacola').empty().append(f2_var_cocacola);
+   if (f2_var_cocacola==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cocacola"><td id="f2_var_cocacola">'+f2_var_cocacola+'</td><td>coca-cola </td></tr>');
+   }
+   if (f2_var_cocacola!=0) {
+   
+   $('#f2_var_cocacola').empty().append(f2_var_cocacola);
+   }
+
+  });
+
+$("#restarcocacola").click(function() {
+   if (f2_var_cocacola!=0) {
+   f2_var_cocacola--;
+   $('#f2_var_cocacola').empty().append(f2_var_cocacola);
+
+   }
+   if (f2_var_cocacola==0) {
+     //$('#fila_cocacola').empty();
+     $("#fila_cocacola").remove();
+
+
+   }
+     
+    $('#f2_var_cocacola').empty().append(f2_var_cocacola);
+    localStorage.setItem("f2_var_cocacola", f2_var_cocacola);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_cocacola")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cocacola"><td id="f2_var_cocacola">'+localStorage.getItem("f2_var_cocacola")+'</td><td>cocacola </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+   
+/*------------------------------LOGICA manzana------------------------------------*/
+var f2_var_manzana= localStorage.getItem("f2_var_manzana");
+$(function() {
+  $("#sumarmanzana").click(function() {
+
+    f2_var_manzana++;
+    localStorage.setItem("f2_var_manzana", f2_var_manzana);
+   $('#f2_var_manzana').empty().append(f2_var_manzana);
+   if (f2_var_manzana==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_manzana"><td id="f2_var_manzana">'+f2_var_manzana+'</td><td>coca-cola </td></tr>');
+   }
+   if (f2_var_manzana!=0) {
+   
+   $('#f2_var_manzana').empty().append(f2_var_manzana);
+   }
+
+  });
+
+$("#restarmanzana").click(function() {
+   if (f2_var_manzana!=0) {
+   f2_var_manzana--;
+   $('#f2_var_manzana').empty().append(f2_var_manzana);
+
+   }
+   if (f2_var_manzana==0) {
+     //$('#fila_manzana').empty();
+     $("#fila_manzana").remove();
+
+
+   }
+     
+    $('#f2_var_manzana').empty().append(f2_var_manzana);
+    localStorage.setItem("f2_var_manzana", f2_var_manzana);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_manzana")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_manzana"><td id="f2_var_manzana">'+localStorage.getItem("f2_var_manzana")+'</td><td>manzana </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+
+/*------------------------------LOGICA arandanos------------------------------------*/
+var f2_var_arandanos= localStorage.getItem("f2_var_arandanos");
+$(function() {
+  $("#sumararandanos").click(function() {
+
+    f2_var_arandanos++;
+    localStorage.setItem("f2_var_arandanos", f2_var_arandanos);
+   $('#f2_var_arandanos').empty().append(f2_var_arandanos);
+   if (f2_var_arandanos==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_arandanos"><td id="f2_var_arandanos">'+f2_var_arandanos+'</td><td>coca-cola </td></tr>');
+   }
+   if (f2_var_arandanos!=0) {
+   
+   $('#f2_var_arandanos').empty().append(f2_var_arandanos);
+   }
+
+  });
+
+$("#restararandanos").click(function() {
+   if (f2_var_arandanos!=0) {
+   f2_var_arandanos--;
+   $('#f2_var_arandanos').empty().append(f2_var_arandanos);
+
+   }
+   if (f2_var_arandanos==0) {
+     //$('#fila_arandanos').empty();
+     $("#fila_arandanos").remove();
+
+
+   }
+     
+    $('#f2_var_arandanos').empty().append(f2_var_arandanos);
+    localStorage.setItem("f2_var_arandanos", f2_var_arandanos);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_arandanos")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_arandanos"><td id="f2_var_arandanos">'+localStorage.getItem("f2_var_arandanos")+'</td><td>arandanos </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA uvas------------------------------------*/
+var f2_var_uvas= localStorage.getItem("f2_var_uvas");
+$(function() {
+  $("#sumaruvas").click(function() {
+
+    f2_var_uvas++;
+    localStorage.setItem("f2_var_uvas", f2_var_uvas);
+   $('#f2_var_uvas').empty().append(f2_var_uvas);
+   if (f2_var_uvas==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_uvas"><td id="f2_var_uvas">'+f2_var_uvas+'</td><td>coca-cola </td></tr>');
+   }
+   if (f2_var_uvas!=0) {
+   
+   $('#f2_var_uvas').empty().append(f2_var_uvas);
+   }
+
+  });
+
+$("#restaruvas").click(function() {
+   if (f2_var_uvas!=0) {
+   f2_var_uvas--;
+   $('#f2_var_uvas').empty().append(f2_var_uvas);
+
+   }
+   if (f2_var_uvas==0) {
+     //$('#fila_uvas').empty();
+     $("#fila_uvas").remove();
+
+
+   }
+     
+    $('#f2_var_uvas').empty().append(f2_var_uvas);
+    localStorage.setItem("f2_var_uvas", f2_var_uvas);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_uvas")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_uvas"><td id="f2_var_uvas">'+localStorage.getItem("f2_var_uvas")+'</td><td>uvas </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+/*------------------------------LOGICA cerezas------------------------------------*/
+var f2_var_cerezas= localStorage.getItem("f2_var_cerezas");
+$(function() {
+  $("#sumarcerezas").click(function() {
+
+    f2_var_cerezas++;
+    localStorage.setItem("f2_var_cerezas", f2_var_cerezas);
+   $('#f2_var_cerezas').empty().append(f2_var_cerezas);
+   if (f2_var_cerezas==1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cerezas"><td id="f2_var_cerezas">'+f2_var_cerezas+'</td><td>coca-cola </td></tr>');
+   }
+   if (f2_var_cerezas!=0) {
+   
+   $('#f2_var_cerezas').empty().append(f2_var_cerezas);
+   }
+
+  });
+
+$("#restarcerezas").click(function() {
+   if (f2_var_cerezas!=0) {
+   f2_var_cerezas--;
+   $('#f2_var_cerezas').empty().append(f2_var_cerezas);
+
+   }
+   if (f2_var_cerezas==0) {
+     //$('#fila_cerezas').empty();
+     $("#fila_cerezas").remove();
+
+
+   }
+     
+    $('#f2_var_cerezas').empty().append(f2_var_cerezas);
+    localStorage.setItem("f2_var_cerezas", f2_var_cerezas);
+});
+
+});
+
+$(document).ready(function(){
+if (localStorage.getItem("f2_var_cerezas")>=1) {
+    $('#tablac1 > tbody:last-child').append('<tr id="fila_cerezas"><td id="f2_var_cerezas">'+localStorage.getItem("f2_var_cerezas")+'</td><td>cerezas </td></tr>');
+   }
+});
+/*--------------------------FIN--------------------------------*/
+
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+
+ <body style="background-color: #7F7C93;" class="viewport" >
+     
+
+
+
+  <div class="container-fluid vh-100">
+        <!--botones de seleccion -->
+      <div class="row ">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
+
+                <button class="font-weight-bold rectangle rounded border border-secondary p-3 " onclick="location.href='../../../menu_productos.html'"><img src="../../img/productos.png"><span style="white-space: nowrap">PRODUCTOS</span></button><span class="font-weight-bold display-4">>></span>
+
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
+            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='../../Distribuir_alimentos/distribuir_alimentos.html'"><img src="../../img/distribuir_alimentos.png"><span style="">DISTRIBUIR ALIMENTOS</span></button><span class="font-weight-bold display-4">>></span>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
+            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected" ><img src="../../img/distribucion_actual.png"><span style="">VER DISTRIBUCION ACTUAL</span></button>
+        </div>
+     </div>
+
+
+
+    <!--compartimentos-->
+
+
+<div class="font-weight-bold" style="color:white;">COMPARTIMENTO CONGELADOR 1</div>
+<!--sI NO HAY NINGUN ALIMENTO
+<p><div class="font-weight-bold fase1 no-alimentos" style="color:white; display: none">NO SE ENCUENTRA NINGUN ALIMENTO</div></p>
+ <button type="button" class="btn-lg btn-block font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1" style="width: 100%;display:none"> AÑADIR ALIMENTO <img src="../../../img/mas.png"></button>-->
+
+<!--si hay alimentos-->
+<div class="modal-body row">
+  <div class="col-md-6">
+
+    <table class="table table-hover table-secondary   border border-secondary fase1 tabla" id="tablac1">
+      <thead>
+        <tr>
+          <th scope="col">CANTIDAD</th>
+          <th scope="col">DESCRIPCIÓN</th>
+        </tr>
+      </thead>
+      <tbody id="cuepoTabla">
+
+      </tbody>
+    </table>
+</div>
+
+
+
+
+<!--botones ñadir editar-->
+  <div class="col-md-6 ">
+
+    <div class="modal-body row parte-izq-botones">
+      <div class="col-md-6">
+        <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1 boton-tabla" style="width: 100%"> AÑADIR ALIMENTO <img src="../../img/mas.png"></button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn-lg  font-weight-bold rectangle rounded border border-secondary boton-primario no-alimentos fase1 boton-tabla" style="width: 100%"> EDITAR <img src="../../img/editar.png"></button>
+      </div>
+    </div>
+
+
+
+    <!--dropdown-->
+    <div class="dropdown desplegable-tabla"  style="display: none;"> <!--<div class="dropdown fase2" style="display: none;">--->
+        <div class="font-weight-bold" style="color:white;">MODIFICAR ALIMENTOS</div>
+      <button class="btn btn-secondary dropdown-toggle font-weight-bold" style="height: 100px;width: 300px; background: #d3d3d3; color: black" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        SELECCIONA UNA CATEGORIA
+      </button>
+      <div class="dropdown-menu" >
+        <button class="dropdown-item lacteos" type="button">LÁCTEOS</button>
+        <button class="dropdown-item carnes" type="button">CARNES, HUEVOS Y PESCADO</button>
+        <button class="dropdown-item hortalizas" type="button">HORTALIZAS Y VERDURAS</button>
+        <button class="dropdown-item frutas" type="button" >FRUTAS</button>
+        <button class="dropdown-item bebidas" type="button">BEBIDAS</button>
+      </div>
+    </div>
+
+
+ <div class="dropdown alimentos-tabla"  style="display: block;">  <!--el que contiene todos los alimentos-->
+<!--fase 3 lacteos-->
+ <div class="col-12 pt-5 pl-5 fase3 lacteos" style="display: none;">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">LÁCTEOS:&nbsp</span>
+        </div>
+            <div class="row m-4"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto mb-5">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario leche" id="leche"><img src="../../img/lecheentera.jpg" width="100" height="100"><span><br>&nbspLECHE ENTERA</span>
+                     <button class="dropdown-item font-weight-bold brn-primary " id="sumarLeche" style="background: #007bff">AÑADIR</button>
+                    <button class="dropdown-item font-weight-bold btn-danger " id="restarLeche" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto mb-5">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="funcion2()"><img src="../../img/yogurbifidus.jpg" width="100" height="100"><span><br>&nbspYOGUR BIFIDUS</span>
+                    <button class="dropdown-item font-weight-bold brn-primary " id="sumaryogur" style="background: #007bff">AÑADIR</button>
+                    <button class="dropdown-item font-weight-bold btn-danger" id="restaryogur" style="background: #dc3545" >ELIMINAR</button>
+
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="funcion3()"><img src="../../img/mantequillatradicional.webp" width="100" height="100"><span><br>&nbspMANTEQUILLA TRADICIONAL</span>
+                    <button class="dropdown-item font-weight-bold brn-primary " id="sumarmantequilla" style="background: #007bff">AÑADIR</button>
+                    <button class="dropdown-item font-weight-bold btn-danger" id="restarmantequilla" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="funcion4()"><img src="../../img/QuesoManchegoanejo.jpg" width="100" height="100"><span><br>&nbspQUESO MANCHEGO</span>
+                        <button class="dropdown-item font-weight-bold brn-primary " id="sumarqueso" style="background: #007bff">AÑADIR</button>
+                    <button class="dropdown-item font-weight-bold btn-danger" id="restarqueso" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+<!--fase 3 carnes-->
+ <div class="col-12 pt-5 pl-5 fase3 carnes" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">CARNES, HUEVOS Y PESCADO:&nbsp</span>
+            </div>
+            <div class="row m-4"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/huevosXL.jpg" width="100" height="100"><span><br>&nbspHUEVOS</span>
+                        <button class="dropdown-item font-weight-bold brn-primary " id="sumarhuevos" style="background: #007bff">AÑADIR</button>
+                    <button class="dropdown-item font-weight-bold btn-danger" id="restarhuevos" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/polloasado.jpg" width="100" height="100"><span><br>&nbspPOLLO ASADO</span>
+                        <button class="dropdown-item font-weight-bold brn-primary " id="sumarpollo" style="background: #007bff">AÑADIR</button>
+                    <button class="dropdown-item font-weight-bold btn-danger" id="restarpollo" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/hamburguesa.jpeg" width="100" height="100"><span><br>&nbspHAMBURGUESA</span>
+                        <button class="dropdown-item font-weight-bold brn-primary " id="sumarhamburguesa" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger" id="restarhamburguesa" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/salmon.jpg" width="100" height="100"><span><br>&nbspSALMON</span>
+                        <button class="dropdown-item font-weight-bold brn-primary " id="sumarsalmon" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger" id="restarsalmon" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>        
+
+
+<!--fase 3 hortalizas-->
+ <div class="col-12 pt-5 pl-5 fase3 hortalizas" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">HORTALIZAS Y VERDURAS:&nbsp</span>
+            </div>
+            <div class="row m-4"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/zanahoria.jpg" width="100" height="100"><span><br>&nbspZANAHORIA</span>
+                        <button class="dropdown-item font-weight-bold brn-primary " id="sumarzanahoria" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger" id="restarzanahoria" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario" ><img src="../../img/pepino.jpg" width="100" height="100"><span><br>&nbspPEPINO</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarpepino" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarpepino" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/calabacin.jpg" width="100" height="100"><span><br>&nbspCALABACIN</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarcalabacin" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarcalabacin" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/ensaladabrotes.jpg" width="100" height="100"><span><br>&nbspENSALADA DE BROTES</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarensalada" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarensalada" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+<!--fase 3 bebidas-->
+ <div class="col-12 pt-5 pl-5 fase3 bebidas" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5"> <!--pt:padding top-->
+                <span class="font-weight-bold">BEBIDAS:&nbsp</span>
+            </div>
+            <div class="row m-5"> <!--pt:padding top-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/tinto.jpg" width="100" height="100"><span><br>&nbspVINO TINTO</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarvinotinto" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarvinotinto" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/rosado.jpg" width="100" height="100"><span class=""><br>&nbspVINO ROSADO</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarvinorosado" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarvinorosado" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/blanco.jpg" width="100" height="100"><span><br>&nbspVINO BLANCO</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarvinoblanco" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarvinoblanco" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/cocacola.jpg" width="100" height="100"><span><br>COCA-COLA</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarcocacola" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarcocacola" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+<!--fase 3 frutas-->
+ <div class="col-12 pt-5 pl-5 fase3 frutas" style="display: none;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5">
+                <span class="font-weight-bold">FRUTAS:&nbsp</span>
+            </div>
+            <div class="row m-4"> 
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/manzana.jpg" width="100" height="100"><span><br>&nbspMANZANA</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarmanzana" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarmanzana" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/arandanos.jpg" width="100" height="100"><span><br>&nbspARANDANOS</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumararandanos" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restararandanos" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/uvas.jpg" width="100" height="100"><span><br>&nbspUVAS</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumaruvas" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restaruvas" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 pt-3 pl-5  mx-auto ">
+                    <div class="font-weight-bold rectangle rounded border border-secondary boton-primario"><img src="../../img/cerezas.jpg" width="100" height="100"><span><br>&nbspCEREZAS</span>
+                        <button class="dropdown-item font-weight-bold brn-primary "  id="sumarcerezas" style="background: #007bff">AÑADIR</button>
+                        <button class="dropdown-item font-weight-bold btn-danger"    id="restarcerezas" style="background: #dc3545" >ELIMINAR</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- alimentos -------------------------------------------------->
+
+
+
+    <div class="row  float-left mt-5 fixed-bottom"> <!--fixed-bottom-->
+            <div class="pt-3 pl-5 ">
+            
+                    <button class="font-weight-bold rectangleVolver rounded border border-secondary sombreado" onclick="location.href='../../index.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+                
+            </div>
+        </div> 
+
+
+ </div>
+
+  </body>
+</html>
