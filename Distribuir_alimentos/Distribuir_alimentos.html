@@ -16,58 +16,94 @@
     
     
     <!-- CSS -->
-    		<link rel="stylesheet" type="text/css" href="../style_st.css">
+            <link rel="stylesheet" type="text/css" href="../style_st.css">
     
-    <title>menu productos</title>
+    <title>Distribucion</title>
   </head>
 
 
  <body style="background-color: #7F7C93;" class="viewport" >
      
-    <div class="container-fluid vh-100">
-    	<!--menu seleccionado -->
-    <div class="row ">
+
+
+
+  <div class="container-fluid vh-100">
+        <!--botones de seleccion -->
+      <div class="row ">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3 pl-5"> <!--pt:padding top-->
 
-                <button class="font-weight-bold rectangle rounded border border-secondary p-3  "  onclick="location.href='../menu_productos.html'"><img src="../img/productos.png"><span style="white-space: nowrap">PRODUCTOS</span></button><span class="font-weight-bold display-4">>></span>
+                <button class="font-weight-bold rectangle rounded border border-secondary p-3 " onclick="location.href='../menu_productos.html'"><img src="../img/productos.png"><span style="white-space: nowrap">PRODUCTOS</span></button><span class="font-weight-bold display-4">>></span>
 
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pt-3">
-            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario selected "><img src="../img/distribuir_alimentos.png"><span style="">DISTRIBUIR ALIMENTOS</span></button>
+            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario" onclick="location.href='distribuir_alimentos.html'"><img src="../img/distribuir_alimentos.png"><span style="">DISTRIBUIR ALIMENTOS</span></button>
         </div>
 
-       
+ 
      </div>
 
-    <!--menu seleccionado -->
-	<div class="row m-5 ">
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 pt-3 pl-5 mx-auto"> 
-            <button class="font-weight-bold rectangle rounded border border-secondary sombreado p-5"><img src="https://api-lunacy.icons8.com/api/assets/7cd64db1-1ff0-4fa9-8008-a63aa21258da/image-asset.png"  width="100" height="100"><p>INTRODUCIR ALIMENTOS</p></button>
+
+    <!--compartimentos-->
+    <div class="modal-body row">
+
+      <div class="col-md-6 pl-5 pt-5">
+        <div class="font-weight-bold" style="color:white;">COMPARTIMENTOS CONGELADOR</div>
+        <div class="btn-group-vertical">
+            <a href="compartimentos/c1.html" style="text-decoration: none">
+                <button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento" style="width: 300px;height: 100px;">1</button> 
+            </a>
+            <a href="compartimentos/c2.html" style="text-decoration: none">
+                <button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento" style="width: 300px;height: 100px;">2</button>
+            </a>
+            <a href="compartimentos/c3.html" style="text-decoration: none">
+                <button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento" style="width: 300px;height: 100px;">3</button>
+            </a>
         </div>
+      </div>
 
-	    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 pt-3 pl-5 mx-auto "> <a href="distribucion_actual/ver_distribucion_actual.html">
-            <button class="font-weight-bold rectangle rounded border border-secondary sombreado p-5"><img src="../img/distribucion_actual.png"><p >VER DISTRIBUCION ACTUAL</p></button></a>
-        </div>        
-	</div>
-        
-    <!--volver -->
+
+
+
+      <div class="col-md-6 pl-5 pt-5">
+        <div class="font-weight-bold" style="color:white;">COMPARTIMENTOS FRIGORIFICO Y PUERTA</div>
+         <div class="modal-body row">
+            <div class="col-md-6 ">
+            <div class="btn-group-vertical">
+                <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento " style="width: 300px;height: 75px;">1</button></a>
+                <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento " style="width: 300px;height: 75px;">2</button></a>
+                <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento " style="width: 300px;height: 75px;">3</button></a>
+                <div class="btn-group" style="margin-bottom: 75px;">
+                    <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento" style="width: 150px;height: 75px;">4</button></a>
+                    <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento" style="width: 150px;height: 75px; margin-top: 0px;">5</button></a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+
+            <div class="btn-group-vertical">
+                <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento " style="width: 300px;height: 75px;margin-bottom: 75px">1</button></a>
+                
+                <a href="compartimentos/c1.html" style="text-decoration: none"><button type="button" class="btn btn-lg btn-block rectangle border-dark font-weight-bold boton-compartimento " style="width: 300px;height: 150px;">2</button></a>
+                
+            </div>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+
     <div class="row  float-left mt-5"> <!--fixed-bottom-->
             <div class="pt-3 pl-5 ">
             
-                    <button class="font-weight-bold rectangleVolver rounded border border-secondary sombreado" onclick="location.href='../menu_productos.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
+                    <button class="font-weight-bold rectangleVolver rounded border border-secondary sombreado" onclick="location.href='../index.html'">VOLVER<img src=https://api-lunacy.icons8.com/api/assets/593ea8d9-e280-4d45-a611-8fc4e5efaeca/Back-To-icon.png width="30" height="30"></button>
                 
             </div>
         </div> 
 
-<!--     <div class="row  float-left mt-5">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 pl-5  "> 
-            <button class="font-weight-bold rectangle rounded border border-secondary boton-primario p-3" style="width: 300px;"><img src="../img/volver.png" width="30" height="30"><span >VOLVER</span></button>
-        </div>
-    </div>-->
-        
- 
-	</div>
+
+ </div>
 
   </body>
 </html>
